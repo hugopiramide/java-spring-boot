@@ -2,38 +2,47 @@ package edu.daw.hugo.ProyectTest.services;
 
 import java.util.List;
 
-import edu.daw.hugo.ProyectTest.model.Actor;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+import edu.daw.hugo.ProyectTest.model.Actor;
+import edu.daw.hugo.ProyectTest.repositories.IActoresRepository;
+
+@Service
 public class ActoresService implements IActoresService{
+
+    @Autowired
+    private IActoresRepository actoresRepo;
 
     @Override
     public Actor insertarActor(Actor actor) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'insertarActor'");
+        return actoresRepo.save(actor);
     }
 
     @Override
     public List<Actor> listaActores() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'listaActores'");
+        return actoresRepo.findAll();
     }
 
     @Override
     public Actor listarActorPorId(Long id) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'listarActorPorId'");
+        return actoresRepo.findById(id).orElse(null);
     }
 
     @Override
     public Actor modificarPorId(Actor actor) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'modificarPorId'");
+        if(actoresRepo.existsById(actor.getActor_id())){
+            System.err.println(
+                "ERROR: No pudo modificarse el usuario."
+            );
+            return null;
+        };
+        return actoresRepo.save(actor);
     }
 
     @Override
     public void eliminarActorPorId(Long id) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'eliminarActorPorId'");
+        actoresRepo.deleteById(id);
     }
 
 }

@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-ProyectTestApplication<ProyectTest>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "edu.daw.hugo.ProyectTest.ProyectTestApplication",
+            "projectName": "ProyectTest",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
