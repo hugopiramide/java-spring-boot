@@ -1,5 +1,9 @@
 package edu.daw.hugo.ProyectTest.model;
 
+import java.util.List;
+
+import org.hibernate.annotations.ManyToAny;
+
 import edu.daw.hugo.ProyectTest.model.genero.Genero;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
@@ -7,6 +11,7 @@ import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.Table;
 
 @Entity
@@ -21,6 +26,9 @@ public class Pelicula {
     private Genero genero;
     private String duracion;
     private String fecha_estreno;
+    
+    @ManyToMany(mappedBy = "peliculas")
+    private List<Actor> listaActores;
     
     public Pelicula(){}
 

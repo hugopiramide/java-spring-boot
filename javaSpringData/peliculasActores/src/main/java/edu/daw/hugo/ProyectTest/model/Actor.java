@@ -1,11 +1,19 @@
 package edu.daw.hugo.ProyectTest.model;
 
 import java.time.LocalDate;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.JoinTable;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.Table;
 
 @Entity
@@ -19,6 +27,15 @@ public class Actor {
     private String apellido;
     private LocalDate fecha_nacimiento;
     private boolean oscarizado;
+    
+    
+    @ManyToMany(fetch = FetchType.LAZY ,cascade = CascadeType.PERSIST) private Set<Pelicula> setPeliculas = new HashSet<>()
+    @JoinTable(
+        name = "actores_peliculas",
+        joinColumns = @JoinColumn(name = "id_actor",nullable = false),
+        inverseJoinColumns = @JoinColumn(name = "id_pelicula",nullable = false)
+    )
+    private List<Pelicula> listaPeliculas;
 
     public Actor(){
     }
