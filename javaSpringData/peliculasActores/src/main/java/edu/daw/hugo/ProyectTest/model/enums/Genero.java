@@ -1,4 +1,4 @@
-package edu.daw.hugo.ProyectTest.model.genero;
+package edu.daw.hugo.ProyectTest.model.enums;
 
 public enum Genero {
     THRILLER,

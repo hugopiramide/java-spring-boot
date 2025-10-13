@@ -1,8 +1,6 @@
 package edu.daw.hugo.ProyectTest.model;
 
 import java.time.LocalDate;
-import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 import jakarta.persistence.CascadeType;
@@ -19,7 +17,7 @@ import jakarta.persistence.Table;
 @Entity
 @Table(name = "actores")
 public class Actor {
-    
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long actor_id;
@@ -27,17 +25,12 @@ public class Actor {
     private String apellido;
     private LocalDate fecha_nacimiento;
     private boolean oscarizado;
-    
-    
-    @ManyToMany(fetch = FetchType.LAZY ,cascade = CascadeType.PERSIST) private Set<Pelicula> setPeliculas = new HashSet<>()
-    @JoinTable(
-        name = "actores_peliculas",
-        joinColumns = @JoinColumn(name = "id_actor",nullable = false),
-        inverseJoinColumns = @JoinColumn(name = "id_pelicula",nullable = false)
-    )
-    private List<Pelicula> listaPeliculas;
 
-    public Actor(){
+    @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.PERSIST)
+    @JoinTable(name = "actores_peliculas", joinColumns = @JoinColumn(name = "actor_id", nullable = false), inverseJoinColumns = @JoinColumn(name = "pelicula_id", nullable = false))
+    private Set<Pelicula> peliculas;
+
+    public Actor() {
     }
 
     public Actor(String nombre, String apellido, LocalDate fecha_nacimiento, boolean oscarizado) {
@@ -100,5 +93,5 @@ public class Actor {
         return "Actor [actor_id=" + actor_id + ", nombre=" + nombre + ", apellido=" + apellido + ", fecha_nacimiento="
                 + fecha_nacimiento + ", oscarizado=" + oscarizado + "]";
     }
-    
+
 }

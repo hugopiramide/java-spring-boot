@@ -1,10 +1,10 @@
 package edu.daw.hugo.ProyectTest.model;
 
-import java.util.List;
+import java.util.Set;
 
 import org.hibernate.annotations.ManyToAny;
 
-import edu.daw.hugo.ProyectTest.model.genero.Genero;
+import edu.daw.hugo.ProyectTest.model.enums.Genero;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
@@ -17,7 +17,7 @@ import jakarta.persistence.Table;
 @Entity
 @Table(name = "peliculas")
 public class Pelicula {
-    
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long pelicula_id;
@@ -26,11 +26,13 @@ public class Pelicula {
     private Genero genero;
     private String duracion;
     private String fecha_estreno;
-    
+
+    // Bucle Infinito
     @ManyToMany(mappedBy = "peliculas")
-    private List<Actor> listaActores;
-    
-    public Pelicula(){}
+    private Set<Actor> actores;
+
+    public Pelicula() {
+    }
 
     public Pelicula(String titulo, Genero genero, String duracion, String fecha_estreno) {
         this.titulo = titulo;
@@ -92,5 +94,5 @@ public class Pelicula {
         return "Pelicula [pelicula_id=" + pelicula_id + ", titulo=" + titulo + ", genero=" + genero + ", duracion="
                 + duracion + ", fecha_estreno=" + fecha_estreno + "]";
     }
-    
+
 }

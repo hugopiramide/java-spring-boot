@@ -6,10 +6,14 @@ import edu.daw.hugo.ProyectTest.model.Pelicula;
 
 public interface IPeliculasService {
 
-    //CRRUD
+    // CRRUD
     public Pelicula insertarPelicula(Pelicula pelicula);
+
     public List<Pelicula> listaPeliculas();
+
     public Pelicula listarPeliculaPorId(Long id);
+
     public Pelicula modificarPeliculaPorId(Pelicula pelicula);
+
     public void eliminarPeliculaPorId(Long id);
 }
