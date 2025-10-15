@@ -30,12 +30,11 @@ public class Pelicula {
     private String duracion;
     private String fecha_estreno;
 
-    // Bucle Infinito
     @ManyToMany(mappedBy = "peliculas")
     private Set<Actor> actores;
 
     @OneToOne(mappedBy = "pelicula", fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true)
-    private Detalles_taquilla detalles_taquilla;
+    private DetallesTaquilla detallesTaquilla;
 
     public Pelicula() {
     }

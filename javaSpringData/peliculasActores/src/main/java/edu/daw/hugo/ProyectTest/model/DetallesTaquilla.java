@@ -5,7 +5,7 @@ import java.math.BigDecimal;
 
 @Entity
 @Table(name = "detalles_taquilla")
-public class Detalles_taquilla {
+public class DetallesTaquilla {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -13,11 +13,11 @@ public class Detalles_taquilla {
     private BigDecimal presupuesto;
     private BigDecimal recaudacion;
 
-    public Detalles_taquilla() {
+    public DetallesTaquilla() {
 
     }
 
-    public Detalles_taquilla(Long taquilla_id, BigDecimal presupuesto, BigDecimal recaudacion, Pelicula pelicula) {
+    public DetallesTaquilla(Long taquilla_id, BigDecimal presupuesto, BigDecimal recaudacion, Pelicula pelicula) {
         this.taquilla_id = taquilla_id;
         this.presupuesto = presupuesto;
         this.recaudacion = recaudacion;
@@ -58,6 +58,12 @@ public class Detalles_taquilla {
 
     public void setPelicula(Pelicula pelicula) {
         this.pelicula = pelicula;
+    }
+
+    @Override
+    public String toString() {
+        return "DetallesTaquilla [taquilla_id=" + taquilla_id + ", presupuesto=" + presupuesto + ", recaudacion="
+                + recaudacion + ", pelicula=" + pelicula + "]";
     }
 
 }
