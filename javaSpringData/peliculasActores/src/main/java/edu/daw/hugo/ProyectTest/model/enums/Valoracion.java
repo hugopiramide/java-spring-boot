@@ -13,7 +13,6 @@ public enum Valoracion {
         this.valorEnBBDD = valor;
     }
 
-    @JsonValue
     public String getValorEnBBDD() {
         return valorEnBBDD;
     }

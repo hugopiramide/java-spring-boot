@@ -3,10 +3,12 @@ package edu.daw.hugo.ProyectTest.services;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import edu.daw.hugo.ProyectTest.model.Critica;
 import edu.daw.hugo.ProyectTest.repositories.ICriticasRepository;
 
+@Service
 public class CriticasService implements ICriticasService {
 
     @Autowired
