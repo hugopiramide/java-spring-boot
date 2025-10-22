@@ -1,4 +1,4 @@
-package edu.daw.hugo.ProyectTest.model.DTO;
+package edu.daw.hugo.ProyectTest.DTO;
 
 import java.time.LocalDate;
 
@@ -52,6 +52,20 @@ public class CriticaDetallesDTO {
 
     public void setCuerpo(String cuerpo) {
         this.cuerpo = cuerpo;
+    }
+
+    public PeliculaResumenDTO getPelicula() {
+        return pelicula;
+    }
+
+    public void setPelicula(PeliculaResumenDTO pelicula) {
+        this.pelicula = pelicula;
+    }
+
+    @Override
+    public String toString() {
+        return "CriticaDetallesDTO [fecha=" + fecha + ", auto=" + auto + ", valoracion=" + valoracion + ", cuerpo="
+                + cuerpo + ", pelicula=" + pelicula + "]";
     }
 
 }

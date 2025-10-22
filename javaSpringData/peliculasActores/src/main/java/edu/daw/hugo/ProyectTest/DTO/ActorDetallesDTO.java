@@ -1,4 +1,4 @@
-package edu.daw.hugo.ProyectTest.model.DTO;
+package edu.daw.hugo.ProyectTest.DTO;
 
 import java.time.LocalDate;
 import java.util.Set;
@@ -8,7 +8,7 @@ public class ActorDetallesDTO {
     private String apellido;
     private LocalDate fechaNacimiento;
     private boolean oscarizado;
-    private Set<PeliculaResumenDTO> SetPeliculas;
+    private Set<PeliculaResumenDTO> peliculas;
 
     public ActorDetallesDTO() {
 
@@ -51,6 +51,20 @@ public class ActorDetallesDTO {
 
     public void setOscarizado(boolean oscarizado) {
         this.oscarizado = oscarizado;
+    }
+
+    @Override
+    public String toString() {
+        return "ActorDetallesDTO [nombre=" + nombre + ", apellido=" + apellido + ", fechaNacimiento=" + fechaNacimiento
+                + ", oscarizado=" + oscarizado + ", peliculas=" + peliculas + "]";
+    }
+
+    public Set<PeliculaResumenDTO> getPeliculas() {
+        return peliculas;
+    }
+
+    public void setPeliculas(Set<PeliculaResumenDTO> peliculas) {
+        this.peliculas = peliculas;
     }
 
 }

@@ -1,4 +1,4 @@
-package edu.daw.hugo.ProyectTest.model.DTO;
+package edu.daw.hugo.ProyectTest.DTO;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -11,8 +11,8 @@ public class PeliculaDetallesDTO {
     private Genero genero;
     private int duracion;
     private LocalDate fechaEstreno;
-    private Set<ActorResumenDTO> setActores;
-    private List<CriticaDetallesDTO> listCriticas;
+    private Set<ActorResumenDTO> actores;
+    private List<CriticaDetallesDTO> criticas;
 
     public PeliculaDetallesDTO() {
 
@@ -55,6 +55,28 @@ public class PeliculaDetallesDTO {
 
     public void setFechaEstreno(LocalDate fechaEstreno) {
         this.fechaEstreno = fechaEstreno;
+    }
+
+    public Set<ActorResumenDTO> getActores() {
+        return actores;
+    }
+
+    public void setActores(Set<ActorResumenDTO> actores) {
+        this.actores = actores;
+    }
+
+    public List<CriticaDetallesDTO> getCriticas() {
+        return criticas;
+    }
+
+    public void setCriticas(List<CriticaDetallesDTO> criticas) {
+        this.criticas = criticas;
+    }
+
+    @Override
+    public String toString() {
+        return "PeliculaDetallesDTO [titulo=" + titulo + ", genero=" + genero + ", duracion=" + duracion
+                + ", fechaEstreno=" + fechaEstreno + ", actores=" + actores + ", criticas=" + criticas + "]";
     }
 
 }

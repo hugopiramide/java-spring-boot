@@ -3,11 +3,14 @@ package edu.daw.hugo.ProyectTest.model;
 import java.time.LocalDate;
 
 import edu.daw.hugo.ProyectTest.model.enums.Valoracion;
-
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
@@ -20,25 +23,29 @@ public class Critica {
     private LocalDate fecha;
     private String autor;
     private Valoracion valoracion;
-    private String comentario;
+    private String cuerpo;
+
+    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @JoinColumn(name = "pelicula_id", nullable = false)
+    private Pelicula pelicula;
 
     public Critica() {
 
     }
 
-    public Critica(LocalDate fecha, String autor, Valoracion valoracion, String comentario) {
+    public Critica(LocalDate fecha, String autor, Valoracion valoracion, String cuerpo) {
         this.fecha = fecha;
         this.autor = autor;
         this.valoracion = valoracion;
-        this.comentario = comentario;
+        this.cuerpo = cuerpo;
     }
 
-    public Critica(Long critica_id, LocalDate fecha, String autor, Valoracion valoracion, String comentario) {
+    public Critica(Long critica_id, LocalDate fecha, String autor, Valoracion valoracion, String cuerpo) {
         this.critica_id = critica_id;
         this.fecha = fecha;
         this.autor = autor;
         this.valoracion = valoracion;
-        this.comentario = comentario;
+        this.cuerpo = cuerpo;
     }
 
     public Long getCritica_id() {
@@ -73,18 +80,26 @@ public class Critica {
         this.valoracion = valoracion;
     }
 
-    public String getComentario() {
-        return comentario;
+    public String getCuerpo() {
+        return cuerpo;
     }
 
-    public void setComentario(String comentario) {
-        this.comentario = comentario;
+    public void setCuerpo(String cuerpo) {
+        this.cuerpo = cuerpo;
+    }
+
+    public Pelicula getPelicula() {
+        return pelicula;
+    }
+
+    public void setPelicula(Pelicula pelicula) {
+        this.pelicula = pelicula;
     }
 
     @Override
     public String toString() {
-        return "Critica [criticas_id=" + critica_id + ", fecha=" + fecha + ", autor=" + autor + ", valoracion="
-                + valoracion + ", comentario=" + comentario + "]";
+        return "Critica [critica_id=" + critica_id + ", fecha=" + fecha + ", autor=" + autor + ", valoracion="
+                + valoracion + ", cuerpo=" + cuerpo + ", pelicula=" + pelicula + "]";
     }
 
 }

@@ -7,6 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import edu.daw.hugo.ProyectTest.services.IActoresService;
 import edu.daw.hugo.ProyectTest.services.ICriticasService;
+import edu.daw.hugo.ProyectTest.services.IDetallesTaquillaService;
 import edu.daw.hugo.ProyectTest.services.IPeliculasService;
 
 @SpringBootApplication
@@ -20,6 +21,9 @@ public class ProyectTestApplication implements CommandLineRunner {
 
 	@Autowired
 	private ICriticasService criticasService;
+
+	@Autowired
+	private IDetallesTaquillaService detallesTaquilla;
 
 	public static void main(String[] args) {
 		SpringApplication.run(ProyectTestApplication.class, args);

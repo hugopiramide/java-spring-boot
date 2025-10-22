@@ -1,4 +1,4 @@
-package edu.daw.hugo.ProyectTest.model.DTO;
+package edu.daw.hugo.ProyectTest.DTO;
 
 import edu.daw.hugo.ProyectTest.model.enums.Genero;
 

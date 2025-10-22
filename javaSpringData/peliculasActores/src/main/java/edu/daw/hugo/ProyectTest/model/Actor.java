@@ -88,6 +88,14 @@ public class Actor {
         this.oscarizado = oscarizado;
     }
 
+    public Set<Pelicula> getPeliculas() {
+        return peliculas;
+    }
+
+    public void setPeliculas(Set<Pelicula> peliculas) {
+        this.peliculas = peliculas;
+    }
+
     @Override
     public String toString() {
         return "Actor [actor_id=" + actor_id + ", nombre=" + nombre + ", apellido=" + apellido + ", fecha_nacimiento="
