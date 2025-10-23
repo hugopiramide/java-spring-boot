@@ -4,7 +4,6 @@ import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Component;
 
-import edu.daw.hugo.ProyectTest.mappers.ActorResumenMapper;
 import edu.daw.hugo.ProyectTest.DTO.PeliculaDetallesDTO;
 import edu.daw.hugo.ProyectTest.model.Pelicula;
 
@@ -21,7 +20,7 @@ public class PeliculaDetallesMapper {
                 .map(ActorResumenMapper::toActorResumenDTO)
                 .collect(Collectors.toSet()));
         dto.setCriticas(pelicula.getCriticas().stream()
-                .map(::toCriticaDetalleDTO)
+                .map(CriticaDetallesMapper::toCriticaDetallesDTO)
                 .collect(Collectors.toList()));
         return dto;
     }

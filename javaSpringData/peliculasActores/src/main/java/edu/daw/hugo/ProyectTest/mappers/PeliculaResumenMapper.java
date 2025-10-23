@@ -9,7 +9,6 @@ import edu.daw.hugo.ProyectTest.model.Pelicula;
 public class PeliculaResumenMapper {
 
     public static PeliculaResumenDTO toPeliculaResumenDTO(Pelicula pelicula) {
-
         PeliculaResumenDTO dto = new PeliculaResumenDTO();
         dto.setTitulo(pelicula.getTitulo());
         dto.setGenero(pelicula.getGenero());

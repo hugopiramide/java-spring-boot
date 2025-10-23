@@ -6,7 +6,7 @@ import edu.daw.hugo.ProyectTest.model.enums.Valoracion;
 
 public class CriticaDetallesDTO {
     private LocalDate fecha;
-    private String auto;
+    private String autor;
     private Valoracion valoracion;
     private String cuerpo;
     private PeliculaResumenDTO pelicula;
@@ -15,9 +15,9 @@ public class CriticaDetallesDTO {
 
     }
 
-    public CriticaDetallesDTO(LocalDate fecha, String auto, Valoracion valoracion, String cuerpo) {
+    public CriticaDetallesDTO(LocalDate fecha, String autor, Valoracion valoracion, String cuerpo) {
         this.fecha = fecha;
-        this.auto = auto;
+        this.autor = autor;
         this.valoracion = valoracion;
         this.cuerpo = cuerpo;
     }
@@ -30,12 +30,12 @@ public class CriticaDetallesDTO {
         this.fecha = fecha;
     }
 
-    public String getAuto() {
-        return auto;
+    public String getAutor() {
+        return autor;
     }
 
-    public void setAuto(String auto) {
-        this.auto = auto;
+    public void setAutor(String autor) {
+        this.autor = autor;
     }
 
     public Valoracion getValoracion() {
@@ -64,7 +64,7 @@ public class CriticaDetallesDTO {
 
     @Override
     public String toString() {
-        return "CriticaDetallesDTO [fecha=" + fecha + ", auto=" + auto + ", valoracion=" + valoracion + ", cuerpo="
+        return "CriticaDetallesDTO [fecha=" + fecha + ", auto=" + autor + ", valoracion=" + valoracion + ", cuerpo="
                 + cuerpo + ", pelicula=" + pelicula + "]";
     }
 

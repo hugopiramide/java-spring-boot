@@ -53,18 +53,18 @@ public class ActorDetallesDTO {
         this.oscarizado = oscarizado;
     }
 
-    @Override
-    public String toString() {
-        return "ActorDetallesDTO [nombre=" + nombre + ", apellido=" + apellido + ", fechaNacimiento=" + fechaNacimiento
-                + ", oscarizado=" + oscarizado + ", peliculas=" + peliculas + "]";
-    }
-
     public Set<PeliculaResumenDTO> getPeliculas() {
         return peliculas;
     }
 
     public void setPeliculas(Set<PeliculaResumenDTO> peliculas) {
         this.peliculas = peliculas;
+    }
+
+    @Override
+    public String toString() {
+        return "ActorDetallesDTO [nombre=" + nombre + ", apellido=" + apellido + ", fechaNacimiento=" + fechaNacimiento
+                + ", oscarizado=" + oscarizado + ", peliculas=" + peliculas + "]";
     }
 
 }
