@@ -1,19 +1,27 @@
-# java-spring
+# ☕ Java Spring Boot Projects
 
-Java projects with Spring Boot. These projects will be created forming an easy-to-read and clean structure to make the code more enjoyable for the reader. These will be initialized in Spring Initializr.
-
-## Spring Data JPA
-
-Spring Data JPA, part of the larger Spring Data family, makes it easy to easily implement JPA-based (Java Persistence API) repositories. It makes it easier to build Spring-powered applications that use data access technologies.
-
-Here are some projects that I did in class: 
-
-- [PeliculasActores](https://github.com/hugopiramide/java-spring/tree/main/javaSpringData/peliculasActores)
+This repository contains projects developed with **Spring Boot**, organized with a clean and easy-to-read structure to make the code more enjoyable and understandable.  
+Each project was initialized using **[Spring Initializr](https://start.spring.io/)**.
 
 ---
 
-## Clone repository 
+## 📦 Spring Data JPA
+
+**Spring Data JPA** is part of the **Spring Data** ecosystem and simplifies the implementation of repositories based on the **Java Persistence API (JPA)**.  
+It allows you to build **Spring-powered applications** that use data access technologies more efficiently and with less boilerplate code.
+
+### 🔹 Example Project
+
+- 🎬 [PeliculasActores](https://github.com/hugopiramide/java-spring/tree/main/javaSpringData/peliculasActores)  
+  A project that manages the relationship between **movies** and **actors**, using **Spring Data JPA**.
+
+---
+
+## 🚀 Clone the Repository
 
 ```
 git clone https://github.com/hugopiramide/java-spring-boot.git
 ```
+## Purpose 
+
+The goal of these projects is to **learn**, **practice**, and **share clear examples** of the Spring Boot ecosystem, applying **best practices** and maintaining a clean structure that makes the code easy to read and understand.
