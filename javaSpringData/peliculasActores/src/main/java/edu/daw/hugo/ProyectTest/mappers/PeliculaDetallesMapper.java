@@ -16,12 +16,9 @@ public class PeliculaDetallesMapper {
         dto.setGenero(pelicula.getGenero());
         dto.setDuracion(pelicula.getDuracion());
         dto.setFechaEstreno(pelicula.getFecha_estreno());
-        dto.setActores(pelicula.getActores().stream()
-                .map(ActorResumenMapper::toActorResumenDTO)
+        dto.setActuaciones(pelicula.getActuaciones().stream()
+                .map(ActuacionDetallesMapper::toActuacionDetallesDTO)
                 .collect(Collectors.toSet()));
-        dto.setCriticas(pelicula.getCriticas().stream()
-                .map(CriticaDetallesMapper::toCriticaDetallesDTO)
-                .collect(Collectors.toList()));
         return dto;
     }
 

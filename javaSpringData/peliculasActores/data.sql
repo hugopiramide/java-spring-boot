@@ -1,4 +1,4 @@
-INSERT INTO actores (actor_id, nombre, apellido, fecha_nacimiento, oscarizado) VALUES
+INSERT INTO actor (actor_id, nombre, apellido, fecha_nacimiento, oscarizado) VALUES
 (1, 'Tom', 'Hanks', '1956-07-09', b'1'),
 (2, 'Meryl', 'Streep', '1949-06-22', b'1'),
 (3, 'Leonardo', 'DiCaprio', '1974-11-11', b'1'),
@@ -25,26 +25,7 @@ INSERT INTO actores (actor_id, nombre, apellido, fecha_nacimiento, oscarizado) V
 (24, 'Anya', 'Taylor-Joy', '1996-04-16', b'0'),
 (25, 'Cillian', 'Murphy', '1976-05-25', b'1');
 
-
-INSERT INTO actores_peliculas (actor_id, pelicula_id) VALUES
-(1, 1),
-(2, 2),
-(3, 3),
-(4, 3),
-(25, 3),
-(4, 4),
-(11, 4),
-(5, 5),
-(6, 6),
-(7, 7),
-(13, 8),
-(13, 9),
-(25, 9),
-(7, 10),
-(9, 10),
-(18, 10);
-
-INSERT INTO criticas (critica_id, fecha, autor, valoracion, cuerpo, pelicula_id) VALUES
+INSERT INTO critica (critica_id, fecha, autor, valoracion, cuerpo, pelicula_id) VALUES
 (1, '2024-01-15', 'Elena García', '5', 'Una obra maestra conmovedora. Tom Hanks está espectacular. Un viaje emocional inolvidable.', 1),
 (2, '2024-02-20', 'Marcos Sánchez', '5', 'Película icónica con una historia que te atrapa de principio a fin. Absolutamente recomendable.', 1),
 (3, '2023-11-10', 'Lucía Fernández', '4', 'Meryl Streep se roba la película. Una comedia inteligente y con mucho estilo. Muy entretenida.', 2),
@@ -67,7 +48,7 @@ INSERT INTO criticas (critica_id, fecha, autor, valoracion, cuerpo, pelicula_id)
 (20, '2023-10-18', 'Beatriz Roca', '5', 'Violenta, divertida y original. Un clásico moderno que hay que ver sí o sí. Pura genialidad.', 10);
 
 
-INSERT INTO peliculas (pelicula_id, titulo, genero, duracion, fecha_estreno) VALUES
+INSERT INTO pelicula (pelicula_id, titulo, genero, duracion, fecha_estreno) VALUES
 (1, 'Forrest Gump', 'DRAMA', 142, '1994-07-06'),
 (2, 'The Devil Wears Prada', 'COMEDIA', 109, '2006-06-30'),
 (3, 'Inception', 'CIENCIA_FICCION', 148, '2010-07-16'),
@@ -84,3 +65,11 @@ INSERT INTO detalles_taquilla (presupuesto, recaudacion, pelicula_id) VALUES
 (55000000.00, 678226876.00, 1),
 (185000000.00, 1006236787.00, 9),
 (356000000.00, 2797501328.00, 4);
+
+INSERT INTO actuacion (actor_id, pelicula_id, es_protagonista, salario, idioma) VALUES
+(1, 1, 1, 20000000.00, 'Inglés'),
+(3, 3, 1, 25000000.00, 'Inglés'),
+(4, 3, 0, 15000000.00, 'Inglés'),
+(25, 3, 0, 10000000.00, 'Inglés (Irlandés)'),
+(4, 4, 1, 20000000.00, 'Inglés'),
+(11, 4, 1, 20000000.00, 'Inglés');

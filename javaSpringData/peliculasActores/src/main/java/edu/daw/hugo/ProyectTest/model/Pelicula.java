@@ -6,6 +6,7 @@ import java.util.Set;
 
 import edu.daw.hugo.ProyectTest.model.enums.Genero;
 import jakarta.persistence.CascadeType;
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
@@ -13,32 +14,35 @@ import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.ManyToMany;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "peliculas")
+@Table(name = "pelicula")
 public class Pelicula {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long pelicula_id;
+    @Column(name = "titulo", nullable = false)
     private String titulo;
     @Enumerated(EnumType.STRING)
+    @Column(name = "genero", nullable = true)
     private Genero genero;
+    @Column(name = "duracion", nullable = false)
     private int duracion;
+    @Column(name = "fecha_estreno", nullable = true)
     private LocalDate fecha_estreno;
-
-    @ManyToMany(mappedBy = "peliculas")
-    private Set<Actor> actores;
 
     @OneToOne(mappedBy = "pelicula", fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true)
     private DetallesTaquilla detallesTaquilla;
 
     @OneToMany(mappedBy = "pelicula", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Critica> criticas;
+
+    @OneToMany(mappedBy = "pelicula", cascade = CascadeType.ALL, orphanRemoval = true)
+    private Set<Actuacion> actuaciones;
 
     public Pelicula() {
     }
@@ -98,14 +102,6 @@ public class Pelicula {
         this.fecha_estreno = fecha_estreno;
     }
 
-    public Set<Actor> getActores() {
-        return actores;
-    }
-
-    public void setActores(Set<Actor> actores) {
-        this.actores = actores;
-    }
-
     public DetallesTaquilla getDetallesTaquilla() {
         return detallesTaquilla;
     }
@@ -122,10 +118,19 @@ public class Pelicula {
         this.criticas = criticas;
     }
 
+    public Set<Actuacion> getActuaciones() {
+        return actuaciones;
+    }
+
+    public void setActuaciones(Set<Actuacion> actuaciones) {
+        this.actuaciones = actuaciones;
+    }
+
     @Override
     public String toString() {
         return "Pelicula [pelicula_id=" + pelicula_id + ", titulo=" + titulo + ", genero=" + genero + ", duracion="
-                + duracion + ", fecha_estreno=" + fecha_estreno + ", actores=" + actores + ", detallesTaquilla="
-                + detallesTaquilla + ", criticas=" + criticas + "]";
+                + duracion + ", fecha_estreno=" + fecha_estreno + ", detallesTaquilla=" + detallesTaquilla
+                + ", criticas=" + criticas + ", actuaciones=" + actuaciones + "]";
     }
+
 }

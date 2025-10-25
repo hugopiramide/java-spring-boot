@@ -10,8 +10,14 @@ public class DetallesTaquilla {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long taquilla_id;
+    @Column(name = "presupuesto", nullable = false)
     private BigDecimal presupuesto;
+    @Column(name = "recaudacion", nullable = true)
     private BigDecimal recaudacion;
+
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "pelicula_id")
+    private Pelicula pelicula;
 
     public DetallesTaquilla() {
 
@@ -23,10 +29,6 @@ public class DetallesTaquilla {
         this.recaudacion = recaudacion;
         this.pelicula = pelicula;
     }
-
-    @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "pelicula_id")
-    private Pelicula pelicula;
 
     public Long getTaquilla_id() {
         return taquilla_id;
@@ -65,5 +67,4 @@ public class DetallesTaquilla {
         return "DetallesTaquilla [taquilla_id=" + taquilla_id + ", presupuesto=" + presupuesto + ", recaudacion="
                 + recaudacion + ", pelicula=" + pelicula + "]";
     }
-
 }

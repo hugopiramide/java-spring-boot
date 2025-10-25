@@ -33,5 +33,4 @@ public class ActorResumenDTO {
     public String toString() {
         return "ActorResumenDTO [nombre=" + nombre + ", apellidos=" + apellido + "]";
     }
-
 }

@@ -3,32 +3,39 @@ package edu.daw.hugo.ProyectTest.model;
 import java.time.LocalDate;
 import java.util.Set;
 
-import jakarta.persistence.CascadeType;
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.JoinTable;
-import jakarta.persistence.ManyToMany;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "actores")
+@Table(name = "actor")
 public class Actor {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long actor_id;
+    @Column(name = "nombre", nullable = false)
     private String nombre;
+    @Column(name = "apellido", nullable = true)
     private String apellido;
+    @Column(name = "fecha_nacimiento", nullable = false)
     private LocalDate fecha_nacimiento;
+    @Column(name = "oscarizado", nullable = true)
     private boolean oscarizado;
 
-    @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.PERSIST)
-    @JoinTable(name = "actores_peliculas", joinColumns = @JoinColumn(name = "actor_id", nullable = false), inverseJoinColumns = @JoinColumn(name = "pelicula_id", nullable = false))
-    private Set<Pelicula> peliculas;
+    // @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.PERSIST)
+    // @JoinTable(name = "actores_peliculas", joinColumns = @JoinColumn(name =
+    // "actor_id", nullable = false), inverseJoinColumns = @JoinColumn(name =
+    // "pelicula_id", nullable = false))
+    // private Set<Pelicula> peliculas;
+
+    @OneToMany(mappedBy = "actor", fetch = FetchType.LAZY, orphanRemoval = true)
+    private Set<Actuacion> actuaciones;
 
     public Actor() {
     }
@@ -88,18 +95,17 @@ public class Actor {
         this.oscarizado = oscarizado;
     }
 
-    public Set<Pelicula> getPeliculas() {
-        return peliculas;
+    public Set<Actuacion> getActuaciones() {
+        return actuaciones;
     }
 
-    public void setPeliculas(Set<Pelicula> peliculas) {
-        this.peliculas = peliculas;
+    public void setActuaciones(Set<Actuacion> actuaciones) {
+        this.actuaciones = actuaciones;
     }
 
     @Override
     public String toString() {
         return "Actor [actor_id=" + actor_id + ", nombre=" + nombre + ", apellido=" + apellido + ", fecha_nacimiento="
-                + fecha_nacimiento + ", oscarizado=" + oscarizado + "]";
+                + fecha_nacimiento + ", oscarizado=" + oscarizado + ", actuaciones=" + actuaciones + "]";
     }
-
 }

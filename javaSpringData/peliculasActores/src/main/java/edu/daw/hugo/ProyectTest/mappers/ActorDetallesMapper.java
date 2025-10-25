@@ -16,8 +16,8 @@ public class ActorDetallesMapper {
         dto.setApellido(actor.getApellido());
         dto.setFechaNacimiento(actor.getFecha_nacimiento());
         dto.setOscarizado(actor.isOscarizado());
-        dto.setPeliculas(actor.getPeliculas().stream()
-                .map(PeliculaResumenMapper::toPeliculaResumenDTO)
+        dto.setActuaciones(actor.getActuaciones().stream()
+                .map(ActuacionDetallesMapper::toActuacionDetallesDTO)
                 .collect(Collectors.toSet()));
         return dto;
     }

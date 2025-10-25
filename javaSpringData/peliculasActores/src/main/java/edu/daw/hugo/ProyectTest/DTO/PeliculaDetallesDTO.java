@@ -11,8 +11,8 @@ public class PeliculaDetallesDTO {
     private Genero genero;
     private int duracion;
     private LocalDate fechaEstreno;
-    private Set<ActorResumenDTO> actores;
     private List<CriticaDetallesDTO> criticas;
+    private Set<ActuacionDetallesDTO> actuaciones;
 
     public PeliculaDetallesDTO() {
 
@@ -57,14 +57,6 @@ public class PeliculaDetallesDTO {
         this.fechaEstreno = fechaEstreno;
     }
 
-    public Set<ActorResumenDTO> getActores() {
-        return actores;
-    }
-
-    public void setActores(Set<ActorResumenDTO> actores) {
-        this.actores = actores;
-    }
-
     public List<CriticaDetallesDTO> getCriticas() {
         return criticas;
     }
@@ -73,10 +65,18 @@ public class PeliculaDetallesDTO {
         this.criticas = criticas;
     }
 
+    public Set<ActuacionDetallesDTO> getActuaciones() {
+        return actuaciones;
+    }
+
+    public void setActuaciones(Set<ActuacionDetallesDTO> actuaciones) {
+        this.actuaciones = actuaciones;
+    }
+
     @Override
     public String toString() {
         return "PeliculaDetallesDTO [titulo=" + titulo + ", genero=" + genero + ", duracion=" + duracion
-                + ", fechaEstreno=" + fechaEstreno + ", actores=" + actores + ", criticas=" + criticas + "]";
+                + ", fechaEstreno=" + fechaEstreno + ", criticas=" + criticas + ", actuaciones=" + actuaciones + "]";
     }
 
 }

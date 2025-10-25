@@ -4,6 +4,7 @@ import java.time.LocalDate;
 
 import edu.daw.hugo.ProyectTest.model.enums.Valoracion;
 import jakarta.persistence.CascadeType;
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
@@ -14,15 +15,19 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "criticas")
+@Table(name = "critica")
 public class Critica {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long critica_id;
+    @Column(name = "fecha", nullable = false)
     private LocalDate fecha;
+    @Column(name = "autor", nullable = false)
     private String autor;
+    @Column(name = "valoracion", nullable = false)
     private Valoracion valoracion;
+    @Column(name = "cuerpo", nullable = true)
     private String cuerpo;
 
     @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)

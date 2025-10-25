@@ -8,7 +8,7 @@ public class ActorDetallesDTO {
     private String apellido;
     private LocalDate fechaNacimiento;
     private boolean oscarizado;
-    private Set<PeliculaResumenDTO> peliculas;
+    private Set<ActuacionDetallesDTO> actuaciones;
 
     public ActorDetallesDTO() {
 
@@ -53,18 +53,18 @@ public class ActorDetallesDTO {
         this.oscarizado = oscarizado;
     }
 
-    public Set<PeliculaResumenDTO> getPeliculas() {
-        return peliculas;
+    public Set<ActuacionDetallesDTO> getActuaciones() {
+        return actuaciones;
     }
 
-    public void setPeliculas(Set<PeliculaResumenDTO> peliculas) {
-        this.peliculas = peliculas;
+    public void setActuaciones(Set<ActuacionDetallesDTO> actuaciones) {
+        this.actuaciones = actuaciones;
     }
 
     @Override
     public String toString() {
         return "ActorDetallesDTO [nombre=" + nombre + ", apellido=" + apellido + ", fechaNacimiento=" + fechaNacimiento
-                + ", oscarizado=" + oscarizado + ", peliculas=" + peliculas + "]";
+                + ", oscarizado=" + oscarizado + ", actuaciones=" + actuaciones + "]";
     }
 
 }
