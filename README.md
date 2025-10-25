@@ -12,8 +12,7 @@ It allows you to build **Spring-powered applications** that use data access tech
 
 ### 🔹 Example Project
 
-- 🎬 [PeliculasActores](https://github.com/hugopiramide/java-spring/tree/main/javaSpringData/peliculasActores)  
-  A project that manages the relationship between **movies** and **actors**, using **Spring Data JPA**.
+- 🎬[PeliculasActores](https://github.com/hugopiramide/java-spring/tree/main/javaSpringData/peliculasActores) - Project that manages the relationship between **movies** and **actors**, using **Spring Data JPA**.
 
 ---
 
