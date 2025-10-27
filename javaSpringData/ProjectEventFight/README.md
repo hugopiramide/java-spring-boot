@@ -29,6 +29,10 @@ El sistema se basa en las siguientes relaciones y reglas de negocio:
       - Se celebran en un Estadio.
       - El mismo par de luchadores puede pelear en el mismo estadio en distintas fechas.
   - Estadios (Arenas): Lugar donde se celebran las peleas.
+    
+Con toda esta información dada, podemos hacernos una idea de cómo será nuestra Relación entre Entidades:
+
+<img src="./MMA_DB_RELATION.drawio.svg" align-center>
 
 ---
 
