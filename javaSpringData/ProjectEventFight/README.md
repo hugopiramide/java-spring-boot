@@ -32,8 +32,6 @@ El sistema se basa en las siguientes relaciones y reglas de negocio:
     
 Con toda esta información dada, podemos hacernos una idea de cómo será nuestra Relación entre Entidades:
 
-<img src="./MMA_DB_RELATION.drawio.svg" align-center>
-
 ---
 
 ## Funcionalidades Implementadas (Consultas Spring Data JPA)
