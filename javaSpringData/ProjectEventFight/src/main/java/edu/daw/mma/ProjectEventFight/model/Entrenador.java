@@ -7,6 +7,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
@@ -27,6 +28,9 @@ public class Entrenador {
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "luchador_id")
     private Luchador luchador;
+
+    @OneToMany(mappedBy = "entrenador")
+    private Contrato_luchador_entrenador contrato_entrenador_luchador;
 
     public Entrenador() {
 

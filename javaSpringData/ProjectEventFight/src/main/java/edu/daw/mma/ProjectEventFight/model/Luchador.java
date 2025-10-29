@@ -44,6 +44,9 @@ public class Luchador {
     @OneToOne(mappedBy = "luchador")
     private Entrenador entrenador;
 
+    @OneToMany(mappedBy = "luchador")
+    private Contrato_luchador_entrenador contrato_luchador_entrenador;
+
     public Luchador() {
 
     }
