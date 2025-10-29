@@ -89,4 +89,12 @@ public class Entrenador {
         this.luchador = luchador;
     }
 
+    public Contrato_luchador_entrenador getContrato_entrenador_luchador() {
+        return contrato_entrenador_luchador;
+    }
+
+    public void setContrato_entrenador_luchador(Contrato_luchador_entrenador contrato_entrenador_luchador) {
+        this.contrato_entrenador_luchador = contrato_entrenador_luchador;
+    }
+
 }

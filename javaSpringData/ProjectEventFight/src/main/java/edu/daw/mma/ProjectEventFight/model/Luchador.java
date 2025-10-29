@@ -123,4 +123,12 @@ public class Luchador {
         this.entrenador = entrenador;
     }
 
+    public Contrato_luchador_entrenador getContrato_luchador_entrenador() {
+        return contrato_luchador_entrenador;
+    }
+
+    public void setContrato_luchador_entrenador(Contrato_luchador_entrenador contrato_luchador_entrenador) {
+        this.contrato_luchador_entrenador = contrato_luchador_entrenador;
+    }
+
 }
