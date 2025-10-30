@@ -45,7 +45,7 @@ public class Luchador {
     private Entrenador entrenador;
 
     @OneToMany(mappedBy = "luchador")
-    private Contrato_luchador_entrenador contrato_luchador_entrenador;
+    private List<Contrato_luchador_entrenador> contratos_luchador_entrenador;
 
     public Luchador() {
 
@@ -123,12 +123,12 @@ public class Luchador {
         this.entrenador = entrenador;
     }
 
-    public Contrato_luchador_entrenador getContrato_luchador_entrenador() {
-        return contrato_luchador_entrenador;
+    public List<Contrato_luchador_entrenador> getContratos_luchador_entrenador() {
+        return contratos_luchador_entrenador;
     }
 
-    public void setContrato_luchador_entrenador(Contrato_luchador_entrenador contrato_luchador_entrenador) {
-        this.contrato_luchador_entrenador = contrato_luchador_entrenador;
+    public void setContratos_luchador_entrenador(List<Contrato_luchador_entrenador> contratos_luchador_entrenador) {
+        this.contratos_luchador_entrenador = contratos_luchador_entrenador;
     }
 
 }

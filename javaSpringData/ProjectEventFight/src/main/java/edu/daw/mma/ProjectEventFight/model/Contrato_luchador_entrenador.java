@@ -28,9 +28,9 @@ public class Contrato_luchador_entrenador {
     @JoinColumn(name = "luchador_id")
     private Luchador luchador;
 
-    @Column(name = "fecha_inicio")
+    @Column(name = "fecha_inicio", nullable = false)
     private LocalDate fecha_inicio;
-    @Column(name = "fecha_fin")
+    @Column(name = "fecha_fin", nullable = true)
     private LocalDate fecha_fin;
 
     public Contrato_luchador_entrenador() {

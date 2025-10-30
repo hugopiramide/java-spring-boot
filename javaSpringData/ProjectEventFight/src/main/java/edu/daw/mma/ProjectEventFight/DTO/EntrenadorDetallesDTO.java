@@ -1,12 +1,14 @@
 package edu.daw.mma.ProjectEventFight.DTO;
 
+import java.util.List;
+
 public class EntrenadorDetallesDTO {
 
     private String nombre;
     private double comision;
     private double salario;
     private LuchadorResumenDTO luchador;
-    private Contrato_luchador_entrenadorDetallesDTO contrato_entrenador_luchador;
+    private List<Contrato_luchador_entrenadorDetallesDTO> contratos_entrenador_luchador;
 
     public EntrenadorDetallesDTO() {
 
@@ -44,12 +46,13 @@ public class EntrenadorDetallesDTO {
         this.luchador = luchador;
     }
 
-    public Contrato_luchador_entrenadorDetallesDTO getContrato_entrenador_luchador() {
-        return contrato_entrenador_luchador;
+    public List<Contrato_luchador_entrenadorDetallesDTO> getContratos_entrenador_luchador() {
+        return contratos_entrenador_luchador;
     }
 
-    public void setContrato_entrenador_luchador(Contrato_luchador_entrenadorDetallesDTO contrato_entrenador_luchador) {
-        this.contrato_entrenador_luchador = contrato_entrenador_luchador;
+    public void setContratos_entrenador_luchador(
+            List<Contrato_luchador_entrenadorDetallesDTO> contratos_entrenador_luchador) {
+        this.contratos_entrenador_luchador = contratos_entrenador_luchador;
     }
 
 }

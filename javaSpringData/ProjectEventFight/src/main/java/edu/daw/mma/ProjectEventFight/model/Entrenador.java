@@ -1,5 +1,7 @@
 package edu.daw.mma.ProjectEventFight.model;
 
+import java.util.List;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -30,7 +32,7 @@ public class Entrenador {
     private Luchador luchador;
 
     @OneToMany(mappedBy = "entrenador")
-    private Contrato_luchador_entrenador contrato_entrenador_luchador;
+    private List<Contrato_luchador_entrenador> contratos_luchador_entrenador;
 
     public Entrenador() {
 
@@ -89,12 +91,12 @@ public class Entrenador {
         this.luchador = luchador;
     }
 
-    public Contrato_luchador_entrenador getContrato_entrenador_luchador() {
-        return contrato_entrenador_luchador;
+    public List<Contrato_luchador_entrenador> getContratos_luchador_entrenador() {
+        return contratos_luchador_entrenador;
     }
 
-    public void setContrato_entrenador_luchador(Contrato_luchador_entrenador contrato_entrenador_luchador) {
-        this.contrato_entrenador_luchador = contrato_entrenador_luchador;
+    public void setContratos_luchador_entrenador(List<Contrato_luchador_entrenador> contratos_luchador_entrenador) {
+        this.contratos_luchador_entrenador = contratos_luchador_entrenador;
     }
 
 }

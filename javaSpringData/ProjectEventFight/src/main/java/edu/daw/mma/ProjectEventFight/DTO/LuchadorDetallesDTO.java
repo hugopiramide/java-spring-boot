@@ -16,7 +16,7 @@ public class LuchadorDetallesDTO {
     private List<PeleaDetallesDTO> peleasComoLuchador1;
     private List<PeleaDetallesDTO> peleasComoLuchador2;
     private EntrenadorDetallesDTO entrenador;
-    private Contrato_luchador_entrenadorDetallesDTO contrato_luchador_entrenador;
+    private List<Contrato_luchador_entrenadorDetallesDTO> contratos_luchador_entrenador;
 
     public LuchadorDetallesDTO() {
 
@@ -86,12 +86,13 @@ public class LuchadorDetallesDTO {
         this.entrenador = entrenador;
     }
 
-    public Contrato_luchador_entrenadorDetallesDTO getContrato_luchador_entrenador() {
-        return contrato_luchador_entrenador;
+    public List<Contrato_luchador_entrenadorDetallesDTO> getContratos_luchador_entrenador() {
+        return contratos_luchador_entrenador;
     }
 
-    public void setContrato_luchador_entrenador(Contrato_luchador_entrenadorDetallesDTO contrato_luchador_entrenador) {
-        this.contrato_luchador_entrenador = contrato_luchador_entrenador;
+    public void setContratos_luchador_entrenador(
+            List<Contrato_luchador_entrenadorDetallesDTO> contratos_luchador_entrenador) {
+        this.contratos_luchador_entrenador = contratos_luchador_entrenador;
     }
 
 }

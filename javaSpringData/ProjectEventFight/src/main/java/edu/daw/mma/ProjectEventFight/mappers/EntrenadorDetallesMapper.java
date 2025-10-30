@@ -1,5 +1,7 @@
 package edu.daw.mma.ProjectEventFight.mappers;
 
+import java.util.stream.Collectors;
+
 import edu.daw.mma.ProjectEventFight.DTO.EntrenadorDetallesDTO;
 import edu.daw.mma.ProjectEventFight.model.Entrenador;
 
@@ -11,8 +13,9 @@ public class EntrenadorDetallesMapper {
         dto.setComision(entrenador.getComision());
         dto.setSalario(entrenador.getSalario());
         dto.setLuchador(LuchadorResumenMapper.toLuchadorResumenDTO(entrenador.getLuchador()));
-        dto.setContrato_entrenador_luchador(Contrato_luchador_entrenadorDetallesMapper
-                .toContrato_luchador_entrenadorDetallesDTO(entrenador.getContrato_entrenador_luchador()));
+        dto.setContratos_entrenador_luchador(entrenador.getContratos_luchador_entrenador().stream()
+                .map(Contrato_luchador_entrenadorDetallesMapper::toContrato_luchador_entrenadorDetallesDTO)
+                .collect(Collectors.toList()));
         return dto;
     }
 
