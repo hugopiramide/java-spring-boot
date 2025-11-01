@@ -2,9 +2,12 @@ package edu.daw.mma.ProjectEventFight.mappers;
 
 import java.util.stream.Collectors;
 
+import org.springframework.stereotype.Component;
+
 import edu.daw.mma.ProjectEventFight.DTO.EntrenadorDetallesDTO;
 import edu.daw.mma.ProjectEventFight.model.Entrenador;
 
+@Component
 public class EntrenadorDetallesMapper {
 
     public static EntrenadorDetallesDTO toEntrenadorDetallesDTO(Entrenador entrenador) {

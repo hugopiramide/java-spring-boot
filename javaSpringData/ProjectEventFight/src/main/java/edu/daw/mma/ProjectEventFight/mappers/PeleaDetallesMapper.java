@@ -1,8 +1,11 @@
 package edu.daw.mma.ProjectEventFight.mappers;
 
+import org.springframework.stereotype.Component;
+
 import edu.daw.mma.ProjectEventFight.DTO.PeleaDetallesDTO;
 import edu.daw.mma.ProjectEventFight.model.Pelea;
 
+@Component
 public class PeleaDetallesMapper {
 
     public static PeleaDetallesDTO toPeleaDetallesDTO(Pelea pelea) {

@@ -1,8 +1,11 @@
 package edu.daw.mma.ProjectEventFight.mappers;
 
+import org.springframework.stereotype.Component;
+
 import edu.daw.mma.ProjectEventFight.DTO.LuchadorResumenDTO;
 import edu.daw.mma.ProjectEventFight.model.Luchador;
 
+@Component
 public class LuchadorResumenMapper {
 
     public static LuchadorResumenDTO toLuchadorResumenDTO(Luchador luchador) {
