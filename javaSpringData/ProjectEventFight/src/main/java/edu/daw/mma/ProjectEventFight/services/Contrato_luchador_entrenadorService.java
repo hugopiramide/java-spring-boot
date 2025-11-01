@@ -4,12 +4,14 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import edu.daw.mma.ProjectEventFight.DTO.Contrato_luchador_entrenadorDetallesDTO;
 import edu.daw.mma.ProjectEventFight.mappers.Contrato_luchador_entrenadorDetallesMapper;
 import edu.daw.mma.ProjectEventFight.model.Contrato_luchador_entrenador;
 import edu.daw.mma.ProjectEventFight.repositories.IContrato_luchador_entrenadorRepository;
 
+@Service
 public class Contrato_luchador_entrenadorService implements IContrato_luchador_entrenadorService {
 
     @Autowired

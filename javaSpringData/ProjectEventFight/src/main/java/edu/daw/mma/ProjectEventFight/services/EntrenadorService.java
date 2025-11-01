@@ -4,12 +4,14 @@ import java.util.Set;
 import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import edu.daw.mma.ProjectEventFight.DTO.EntrenadorDetallesDTO;
 import edu.daw.mma.ProjectEventFight.mappers.EntrenadorDetallesMapper;
 import edu.daw.mma.ProjectEventFight.model.Entrenador;
 import edu.daw.mma.ProjectEventFight.repositories.IEntrenadorRepository;
 
+@Service
 public class EntrenadorService implements IEntrenadorService {
 
     @Autowired

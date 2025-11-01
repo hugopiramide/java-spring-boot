@@ -4,12 +4,14 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import edu.daw.mma.ProjectEventFight.DTO.PeleaDetallesDTO;
 import edu.daw.mma.ProjectEventFight.mappers.PeleaDetallesMapper;
 import edu.daw.mma.ProjectEventFight.model.Pelea;
 import edu.daw.mma.ProjectEventFight.repositories.IPeleaRepository;
 
+@Service
 public class PeleaService implements IPeleaService {
 
     @Autowired
