@@ -36,6 +36,7 @@ public class ProjectEventFightApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 
+		System.out.println("Iniciando modo desatendido...");
 	}
 
 }

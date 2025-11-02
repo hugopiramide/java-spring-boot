@@ -32,7 +32,7 @@ public class Luchador {
     @Enumerated(EnumType.STRING)
     @Column(name = "caracter", nullable = true)
     private Caracter caracter;
-    @Column(name = "arte_marical", nullable = true)
+    @Column(name = "arte_marcial", nullable = true)
     private ArteMarcial arteMarcial;
 
     @OneToMany(mappedBy = "luchador1")

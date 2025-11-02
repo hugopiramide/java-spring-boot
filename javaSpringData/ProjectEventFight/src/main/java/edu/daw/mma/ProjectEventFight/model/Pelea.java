@@ -30,7 +30,7 @@ public class Pelea {
     private Luchador luchador2;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "name = estadio_id")
+    @JoinColumn(name = "estadio_id")
     private Estadio estadio;
 
     @Column(name = "taquilla", nullable = true)
