@@ -9,9 +9,11 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
@@ -41,7 +43,8 @@ public class Luchador {
     @OneToMany(mappedBy = "luchador2")
     private List<Pelea> peleasComoLuchador2;
 
-    @OneToOne(mappedBy = "luchador")
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "entrenador_id")
     private Entrenador entrenador;
 
     @OneToMany(mappedBy = "luchador")

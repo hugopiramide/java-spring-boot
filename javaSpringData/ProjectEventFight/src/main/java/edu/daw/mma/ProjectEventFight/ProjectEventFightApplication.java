@@ -37,6 +37,8 @@ public class ProjectEventFightApplication implements CommandLineRunner {
 	public void run(String... args) throws Exception {
 
 		System.out.println("Iniciando modo desatendido...");
+
+		luchadorService.listarLuchadorPorId(1L);
 	}
 
 }
