@@ -1,26 +1,26 @@
 -- ===========================
 -- 🔹 TABLA: LUCHADOR
 -- ===========================
-INSERT INTO luchador (luchador_id,arte_marcial, fecha_nacimiento, apodo, nombre, caracter)
+INSERT INTO luchador (luchador_id,arte_marcial, fecha_nacimiento, apodo, nombre, caracter,entrenador_id)
 VALUES
-(1,0, '1990-04-15', 'El Santo', 'Rodolfo Guzmán', 'OFENSIVO'),
-(2,1, '1987-09-22', 'Blue Demon', 'Alejandro Muñoz', 'DEFENSIVO'),
-(3,2, '1995-12-10', 'Rey Misterio', 'Óscar Gutiérrez', 'LOCO'),
-(4,3, '1992-03-05', 'La Bestia', 'Carlos Mendoza', 'OFENSIVO'),
-(5,4, '1989-07-30', 'El Tigre', 'Manuel Torres', 'DEFENSIVO'),
-(6,5, '1993-01-11', 'El Fantasma', 'Luis Ortega', 'LOCO');
+(1,0, '1990-04-15', 'El Santo', 'Rodolfo Guzmán', 'OFENSIVO', 1),
+(2,1, '1987-09-22', 'Blue Demon', 'Alejandro Muñoz', 'DEFENSIVO', 2),
+(3,2, '1995-12-10', 'Rey Misterio', 'Óscar Gutiérrez', 'LOCO', 4),
+(4,3, '1992-03-05', 'La Bestia', 'Carlos Mendoza', 'OFENSIVO', 3),
+(5,4, '1989-07-30', 'El Tigre', 'Manuel Torres', 'DEFENSIVO', 5),
+(6,5, '1993-01-11', 'El Fantasma', 'Luis Ortega', 'LOCO', 6);
 
 -- ===========================
 -- 🔹 TABLA: ENTRENADOR
 -- ===========================
-INSERT INTO entrenador (comison, salario, luchador_id, nombre)
+INSERT INTO entrenador (comison, salario, nombre)
 VALUES
-(0.10, 5000, 1, 'Jorge Morales'),
-(0.15, 5500, 2, 'Raúl Jiménez'),
-(0.12, 4800, 3, 'Pedro Sánchez'),
-(0.18, 6000, 4, 'Héctor Díaz'),
-(0.14, 5300, 5, 'Fernando Pérez'),
-(0.11, 5100, 6, 'Miguel López');
+(0.10, 5000, 'Jorge Morales'),
+(0.15, 5500, 'Raúl Jiménez'),
+(0.12, 4800, 'Pedro Sánchez'),
+(0.18, 6000, 'Héctor Díaz'),
+(0.14, 5300, 'Fernando Pérez'),
+(0.11, 5100, 'Miguel López');
 
 -- ===========================
 -- 🔹 TABLA: CONTRATO_LUCHADOR_ENTRENADOR
