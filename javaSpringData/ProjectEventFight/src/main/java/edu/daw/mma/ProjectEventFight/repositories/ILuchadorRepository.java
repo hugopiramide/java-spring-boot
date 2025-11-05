@@ -10,7 +10,7 @@ import edu.daw.mma.ProjectEventFight.model.Luchador;
 
 public interface ILuchadorRepository extends JpaRepository<Luchador, Long> {
 
-    @Query("SELECT l FROM Luchador l WHERE l.nombre LIKE :nombre ")
+    @Query("SELECT DISTINCT l FROM Luchador l WHERE l.nombre LIKE :nombre ")
     Optional<Luchador> filtrarLuchadoresPorNombre(@Param("nombre") String nombre);
 
 }
