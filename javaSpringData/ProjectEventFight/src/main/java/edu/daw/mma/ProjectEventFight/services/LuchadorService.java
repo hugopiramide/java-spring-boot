@@ -6,8 +6,8 @@ import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import edu.daw.mma.ProjectEventFight.DTO.LuchadorDetallesDTO;
-import edu.daw.mma.ProjectEventFight.mappers.LuchadorDetallesMapper;
+import edu.daw.mma.ProjectEventFight.DTO.LuchadorResumenDTO;
+import edu.daw.mma.ProjectEventFight.mappers.LuchadorResumenMapper;
 import edu.daw.mma.ProjectEventFight.model.Luchador;
 import edu.daw.mma.ProjectEventFight.repositories.ILuchadorRepository;
 
@@ -18,28 +18,28 @@ public class LuchadorService implements ILuchadorService {
     private ILuchadorRepository luchadorRepo;
 
     @Override
-    public LuchadorDetallesDTO insertarLuchador(Luchador luchador) {
+    public LuchadorResumenDTO insertarLuchador(Luchador luchador) {
         luchadorRepo.save(luchador);
-        return LuchadorDetallesMapper.toLuchadorDetallesDTO(luchador);
+        return LuchadorResumenMapper.toLuchadorResumenDTO(luchador);
     }
 
     @Override
-    public Set<LuchadorDetallesDTO> listarLuchadores() {
+    public Set<LuchadorResumenDTO> listarLuchadores() {
         return luchadorRepo.findAll().stream()
-                .map(LuchadorDetallesMapper::toLuchadorDetallesDTO)
+                .map(LuchadorResumenMapper::toLuchadorResumenDTO)
                 .collect(Collectors.toSet());
     }
 
     @Override
-    public LuchadorDetallesDTO listarLuchadorPorId(Long id) {
-        return LuchadorDetallesMapper.toLuchadorDetallesDTO(luchadorRepo.findById(id).orElse(null));
+    public LuchadorResumenDTO listarLuchadorPorId(Long id) {
+        return LuchadorResumenMapper.toLuchadorResumenDTO(luchadorRepo.findById(id).orElse(null));
     }
 
     @Override
-    public LuchadorDetallesDTO modificarLuchadorPorId(Luchador luchador) {
+    public LuchadorResumenDTO modificarLuchadorPorId(Luchador luchador) {
         if (luchadorRepo.existsById(luchador.getLuchador_id())) {
             luchadorRepo.save(luchador);
-            return LuchadorDetallesMapper.toLuchadorDetallesDTO(luchador);
+            return LuchadorResumenMapper.toLuchadorResumenDTO(luchador);
         }
         return null;
     }

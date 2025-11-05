@@ -1,16 +1,4 @@
 -- ===========================
--- 🔹 TABLA: LUCHADOR
--- ===========================
-INSERT INTO luchador (luchador_id,arte_marcial, fecha_nacimiento, apodo, nombre, caracter,entrenador_id)
-VALUES
-(1,0, '1990-04-15', 'El Santo', 'Rodolfo Guzmán', 'OFENSIVO', 1),
-(2,1, '1987-09-22', 'Blue Demon', 'Alejandro Muñoz', 'DEFENSIVO', 2),
-(3,2, '1995-12-10', 'Rey Misterio', 'Óscar Gutiérrez', 'LOCO', 4),
-(4,3, '1992-03-05', 'La Bestia', 'Carlos Mendoza', 'OFENSIVO', 3),
-(5,4, '1989-07-30', 'El Tigre', 'Manuel Torres', 'DEFENSIVO', 5),
-(6,5, '1993-01-11', 'El Fantasma', 'Luis Ortega', 'LOCO', 6);
-
--- ===========================
 -- 🔹 TABLA: ENTRENADOR
 -- ===========================
 INSERT INTO entrenador (comison, salario, nombre)
@@ -21,6 +9,18 @@ VALUES
 (0.18, 6000, 'Héctor Díaz'),
 (0.14, 5300, 'Fernando Pérez'),
 (0.11, 5100, 'Miguel López');
+
+-- ===========================
+-- 🔹 TABLA: LUCHADOR
+-- ===========================
+INSERT INTO luchador (luchador_id,arte_marcial, fecha_nacimiento, apodo, nombre, caracter,entrenador_id)
+VALUES
+(1,0, '1990-04-15', 'El Santo', 'Rodolfo Guzmán', 'OFENSIVO', 1),
+(2,1, '1987-09-22', 'Blue Demon', 'Alejandro Muñoz', 'DEFENSIVO', 2),
+(3,2, '1995-12-10', 'Rey Misterio', 'Óscar Gutiérrez', 'LOCO', 4),
+(4,3, '1992-03-05', 'La Bestia', 'Carlos Mendoza', 'OFENSIVO', 3),
+(5,4, '1989-07-30', 'El Tigre', 'Manuel Torres', 'DEFENSIVO', 5),
+(6,5, '1993-01-11', 'El Fantasma', 'Luis Ortega', 'LOCO', 6);
 
 -- ===========================
 -- 🔹 TABLA: CONTRATO_LUCHADOR_ENTRENADOR

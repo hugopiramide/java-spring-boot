@@ -57,4 +57,10 @@ public class LuchadorResumenDTO {
         this.arteMarcial = arteMarcial;
     }
 
+    @Override
+    public String toString() {
+        return "LuchadorResumenDTO [nombre=" + nombre + ", apodo=" + apodo + ", fecha_nacimiento=" + fecha_nacimiento
+                + ", caracter=" + caracter + ", arteMarcial=" + arteMarcial + "]";
+    }
+
 }
