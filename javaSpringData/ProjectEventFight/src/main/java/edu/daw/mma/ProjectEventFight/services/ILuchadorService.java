@@ -1,5 +1,6 @@
 package edu.daw.mma.ProjectEventFight.services;
 
+import java.util.List;
 import java.util.Set;
 
 import edu.daw.mma.ProjectEventFight.DTO.LuchadorResumenDTO;
@@ -17,4 +18,5 @@ public interface ILuchadorService {
 
     public void eliminarLuchadorPorId(Long id);
 
+    public List<LuchadorResumenDTO> buscarLuchadoresPorNombre(String nombre);
 }

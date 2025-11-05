@@ -38,7 +38,9 @@ public class ProjectEventFightApplication implements CommandLineRunner {
 
 		System.out.println("Iniciando modo desatendido...");
 
-		System.out.println(luchadorService.listarLuchadorPorId(1L).toString());
+		// System.out.println(luchadorService.listarLuchadorPorId(1L).toString());
+
+		System.out.println(luchadorService.buscarLuchadoresPorNombre("Rodolfo Guzmán"));
 	}
 
 }

@@ -1,5 +1,6 @@
 package edu.daw.mma.ProjectEventFight.services;
 
+import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -49,4 +50,10 @@ public class LuchadorService implements ILuchadorService {
         luchadorRepo.deleteById(id);
     }
 
+    @Override
+    public List<LuchadorResumenDTO> buscarLuchadoresPorNombre(String nombre) {
+        return luchadorRepo.filtrarLuchadoresPorNombre(nombre).stream()
+                .map(LuchadorResumenMapper::toLuchadorResumenDTO)
+                .collect(Collectors.toList());
+    }
 }
