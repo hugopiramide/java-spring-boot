@@ -15,7 +15,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "libros")
+@Table(name = "libro")
 public class Libro {
 
     @Id
@@ -44,6 +44,14 @@ public class Libro {
 
     @Column
     private LocalDate fechaLanzamiento;
+    
+    @ManyToMany
+    @JoinTable(
+        name = "libro_autor",
+        joinColumns = @JoinColumn(name = "libro_id"),
+        inverseJoinColumns = @JoinColumn(name = "autor_id")
+    )
+    private Set<Autor> autores = new HashSet<>();
 
     public Libro() {
     }
