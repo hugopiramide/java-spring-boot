@@ -1,7 +1,6 @@
 package com.ecommerce.hcd.model;
 
 import java.util.List;
-import java.util.Locale.Category;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;

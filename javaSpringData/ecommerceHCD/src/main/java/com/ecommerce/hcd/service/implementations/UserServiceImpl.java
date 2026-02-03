@@ -8,6 +8,10 @@ import org.springframework.stereotype.Service;
 import com.ecommerce.hcd.model.User;
 import com.ecommerce.hcd.repository.UserRepository;
 import com.ecommerce.hcd.service.interfaces.UserService;
+import com.ecommerce.hcd.dto.request.UserRequest;
+import com.ecommerce.hcd.dto.response.UserResponse;
+import com.ecommerce.hcd.mapper.UserMapper;
+import java.util.ArrayList;
 
 @Service
 public class UserServiceImpl implements UserService {
@@ -42,6 +46,34 @@ public class UserServiceImpl implements UserService {
     @Override
     public void deleteById(Long id) {
         userRepository.deleteById(id);
+    }
+
+    @Override
+    public List<UserResponse> findAllDto() {
+        List<User> users = userRepository.findAll();
+        List<UserResponse> out = new ArrayList<>();
+        for (User u : users) out.add(UserMapper.toResponse(u));
+        return out;
+    }
+
+    @Override
+    public java.util.Optional<UserResponse> findByIdDto(Long id) {
+        return userRepository.findById(id).map(UserMapper::toResponse);
+    }
+
+    @Override
+    public UserResponse saveDto(UserRequest req) {
+        User u = UserMapper.toEntity(req);
+        User saved = userRepository.save(u);
+        return UserMapper.toResponse(saved);
+    }
+
+    @Override
+    public UserResponse updateDto(Long id, UserRequest req) {
+        User u = UserMapper.toEntity(req);
+        u.setId(id);
+        User saved = userRepository.save(u);
+        return UserMapper.toResponse(saved);
     }
 
 }

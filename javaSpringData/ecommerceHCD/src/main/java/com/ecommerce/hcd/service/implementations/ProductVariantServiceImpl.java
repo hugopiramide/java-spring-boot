@@ -8,6 +8,10 @@ import org.springframework.stereotype.Service;
 import com.ecommerce.hcd.model.ProductVariant;
 import com.ecommerce.hcd.repository.ProductVariantRepository;
 import com.ecommerce.hcd.service.interfaces.ProductVariantService;
+import com.ecommerce.hcd.dto.request.ProductVariantRequest;
+import com.ecommerce.hcd.dto.response.ProductVariantResponse;
+import com.ecommerce.hcd.mapper.ProductVariantMapper;
+import java.util.ArrayList;
 
 @Service
 public class ProductVariantServiceImpl implements ProductVariantService {
@@ -42,6 +46,34 @@ public class ProductVariantServiceImpl implements ProductVariantService {
     @Override
     public void deleteById(Long id) {
         productVariantRepository.deleteById(id);
+    }
+
+    @Override
+    public List<ProductVariantResponse> findAllDto() {
+        List<ProductVariant> list = productVariantRepository.findAll();
+        List<ProductVariantResponse> out = new ArrayList<>();
+        for (ProductVariant pv : list) out.add(ProductVariantMapper.toResponse(pv));
+        return out;
+    }
+
+    @Override
+    public java.util.Optional<ProductVariantResponse> findByIdDto(Long id) {
+        return productVariantRepository.findById(id).map(ProductVariantMapper::toResponse);
+    }
+
+    @Override
+    public ProductVariantResponse saveDto(ProductVariantRequest req) {
+        ProductVariant pv = ProductVariantMapper.toEntity(req);
+        ProductVariant saved = productVariantRepository.save(pv);
+        return ProductVariantMapper.toResponse(saved);
+    }
+
+    @Override
+    public ProductVariantResponse updateDto(Long id, ProductVariantRequest req) {
+        ProductVariant pv = ProductVariantMapper.toEntity(req);
+        pv.setId(id);
+        ProductVariant saved = productVariantRepository.save(pv);
+        return ProductVariantMapper.toResponse(saved);
     }
 
 }

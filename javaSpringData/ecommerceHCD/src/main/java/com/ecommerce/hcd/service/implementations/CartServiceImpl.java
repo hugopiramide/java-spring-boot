@@ -8,6 +8,10 @@ import org.springframework.stereotype.Service;
 import com.ecommerce.hcd.model.Cart;
 import com.ecommerce.hcd.repository.CartRepository;
 import com.ecommerce.hcd.service.interfaces.CartService;
+import com.ecommerce.hcd.dto.request.CartRequest;
+import com.ecommerce.hcd.dto.response.CartResponse;
+import com.ecommerce.hcd.mapper.CartMapper;
+import java.util.ArrayList;
 
 @Service
 public class CartServiceImpl implements CartService {
@@ -42,6 +46,34 @@ public class CartServiceImpl implements CartService {
     @Override
     public void deleteById(Long id) {
         cartRepository.deleteById(id);
+    }
+
+    @Override
+    public List<CartResponse> findAllDto() {
+        List<Cart> list = cartRepository.findAll();
+        List<CartResponse> out = new ArrayList<>();
+        for (Cart c : list) out.add(CartMapper.toResponse(c));
+        return out;
+    }
+
+    @Override
+    public java.util.Optional<CartResponse> findByIdDto(Long id) {
+        return cartRepository.findById(id).map(CartMapper::toResponse);
+    }
+
+    @Override
+    public CartResponse saveDto(CartRequest req) {
+        Cart c = CartMapper.toEntity(req);
+        Cart saved = cartRepository.save(c);
+        return CartMapper.toResponse(saved);
+    }
+
+    @Override
+    public CartResponse updateDto(Long id, CartRequest req) {
+        Cart c = CartMapper.toEntity(req);
+        c.setId(id);
+        Cart saved = cartRepository.save(c);
+        return CartMapper.toResponse(saved);
     }
 
 }

@@ -4,6 +4,8 @@ import java.util.List;
 import java.util.Optional;
 
 import com.ecommerce.hcd.model.Product;
+import com.ecommerce.hcd.dto.request.ProductRequest;
+import com.ecommerce.hcd.dto.response.ProductResponse;
 
 public interface ProductService {
 
@@ -16,4 +18,12 @@ public interface ProductService {
     Product update(Long id, Product product);
     
     void deleteById(Long id);
+
+    List<ProductResponse> findAllDto();
+
+    Optional<ProductResponse> findByIdDto(Long id);
+
+    ProductResponse saveDto(ProductRequest req);
+
+    ProductResponse updateDto(Long id, ProductRequest req);
 }

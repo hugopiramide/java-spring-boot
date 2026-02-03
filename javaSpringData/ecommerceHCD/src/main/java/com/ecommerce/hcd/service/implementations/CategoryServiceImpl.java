@@ -8,6 +8,10 @@ import org.springframework.stereotype.Service;
 import com.ecommerce.hcd.model.Category;
 import com.ecommerce.hcd.repository.CategoryRepository;
 import com.ecommerce.hcd.service.interfaces.CategoryService;
+import com.ecommerce.hcd.dto.request.CategoryRequest;
+import com.ecommerce.hcd.dto.response.CategoryResponse;
+import com.ecommerce.hcd.mapper.CategoryMapper;
+import java.util.ArrayList;
 
 @Service
 public class CategoryServiceImpl implements CategoryService {
@@ -42,6 +46,34 @@ public class CategoryServiceImpl implements CategoryService {
     @Override
     public void deleteById(Long id) {
         categoryRepository.deleteById(id);
+    }
+
+    @Override
+    public List<CategoryResponse> findAllDto() {
+        List<Category> list = categoryRepository.findAll();
+        List<CategoryResponse> out = new ArrayList<>();
+        for (Category c : list) out.add(CategoryMapper.toResponse(c));
+        return out;
+    }
+
+    @Override
+    public java.util.Optional<CategoryResponse> findByIdDto(Long id) {
+        return categoryRepository.findById(id).map(CategoryMapper::toResponse);
+    }
+
+    @Override
+    public CategoryResponse saveDto(CategoryRequest req) {
+        Category c = CategoryMapper.toEntity(req);
+        Category saved = categoryRepository.save(c);
+        return CategoryMapper.toResponse(saved);
+    }
+
+    @Override
+    public CategoryResponse updateDto(Long id, CategoryRequest req) {
+        Category c = CategoryMapper.toEntity(req);
+        c.setId(id);
+        Category saved = categoryRepository.save(c);
+        return CategoryMapper.toResponse(saved);
     }
 
 }

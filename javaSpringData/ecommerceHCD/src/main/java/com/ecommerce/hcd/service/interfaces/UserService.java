@@ -4,6 +4,8 @@ import java.util.List;
 import java.util.Optional;
 
 import com.ecommerce.hcd.model.User;
+import com.ecommerce.hcd.dto.request.UserRequest;
+import com.ecommerce.hcd.dto.response.UserResponse;
 
 public interface UserService {
 
@@ -16,4 +18,12 @@ public interface UserService {
     User update(Long id, User user);
 
     void deleteById(Long id);
+
+    List<UserResponse> findAllDto();
+
+    Optional<UserResponse> findByIdDto(Long id);
+
+    UserResponse saveDto(UserRequest req);
+
+    UserResponse updateDto(Long id, UserRequest req);
 }
