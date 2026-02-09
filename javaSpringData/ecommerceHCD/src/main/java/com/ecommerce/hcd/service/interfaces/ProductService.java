@@ -26,4 +26,6 @@ public interface ProductService {
     ProductResponse saveDto(ProductRequest req);
 
     ProductResponse updateDto(Long id, ProductRequest req);
+
+    List<ProductResponse> findFirst10();
 }

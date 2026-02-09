@@ -26,4 +26,8 @@ public interface CartService {
     CartResponse saveDto(CartRequest req);
 
     CartResponse updateDto(Long id, CartRequest req);
+
+    CartResponse addItemByUser(Long userId, com.ecommerce.hcd.dto.request.CartItemsRequest req);
+
+    CartResponse removeItemByUser(Long userId, Long cartItemId);
 }

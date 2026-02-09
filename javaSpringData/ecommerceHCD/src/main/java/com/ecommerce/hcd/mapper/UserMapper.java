@@ -3,7 +3,6 @@ package com.ecommerce.hcd.mapper;
 import com.ecommerce.hcd.dto.request.UserRequest;
 import com.ecommerce.hcd.dto.response.UserResponse;
 import com.ecommerce.hcd.model.User;
-import com.ecommerce.hcd.model.enumerated.Role;
 
 public class UserMapper {
 
@@ -14,9 +13,9 @@ public class UserMapper {
         u.setEmail(req.getEmail());
         u.setPassword(req.getPassword());
         u.setProfileImgUrl(req.getProfileImgUrl());
-        if (req.getRole() != null) {
-            try { u.setRole(Role.valueOf(req.getRole())); } catch (Exception e) { }
-        }
+        u.setName(req.getName());
+        u.setSurnames(req.getSurnames());
+        u.setBirthday(req.getBirthday());
         return u;
     }
 
@@ -27,6 +26,9 @@ public class UserMapper {
         r.setUsername(u.getUsername());
         r.setEmail(u.getEmail());
         r.setProfileImgUrl(u.getProfileImgUrl());
+        r.setName(u.getName());
+        r.setSurnames(u.getSurnames());
+        r.setBirthday(u.getBirthday());
         if (u.getRole() != null) r.setRole(u.getRole().name());
         r.setCreateAt(u.getCreate_at());
         return r;

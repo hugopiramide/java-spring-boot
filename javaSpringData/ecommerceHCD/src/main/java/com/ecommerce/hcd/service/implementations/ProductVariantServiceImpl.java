@@ -52,20 +52,20 @@ public class ProductVariantServiceImpl implements ProductVariantService {
     public List<ProductVariantResponse> findAllDto() {
         List<ProductVariant> list = productVariantRepository.findAll();
         List<ProductVariantResponse> out = new ArrayList<>();
-        for (ProductVariant pv : list) out.add(ProductVariantMapper.toResponse(pv));
+        for (ProductVariant pv : list) out.add(ProductVariantMapper.toResponse(pv, pv.getProduct()));
         return out;
     }
 
     @Override
     public java.util.Optional<ProductVariantResponse> findByIdDto(Long id) {
-        return productVariantRepository.findById(id).map(ProductVariantMapper::toResponse);
+        return productVariantRepository.findById(id).map(pv -> ProductVariantMapper.toResponse(pv, pv.getProduct()));
     }
 
     @Override
     public ProductVariantResponse saveDto(ProductVariantRequest req) {
         ProductVariant pv = ProductVariantMapper.toEntity(req);
         ProductVariant saved = productVariantRepository.save(pv);
-        return ProductVariantMapper.toResponse(saved);
+        return ProductVariantMapper.toResponse(saved, saved.getProduct());
     }
 
     @Override
@@ -73,7 +73,7 @@ public class ProductVariantServiceImpl implements ProductVariantService {
         ProductVariant pv = ProductVariantMapper.toEntity(req);
         pv.setId(id);
         ProductVariant saved = productVariantRepository.save(pv);
-        return ProductVariantMapper.toResponse(saved);
+        return ProductVariantMapper.toResponse(saved, saved.getProduct());
     }
 
 }

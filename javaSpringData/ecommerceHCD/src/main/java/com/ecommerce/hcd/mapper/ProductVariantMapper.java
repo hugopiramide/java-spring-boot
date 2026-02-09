@@ -24,11 +24,21 @@ public class ProductVariantMapper {
         return pv;
     }
 
+    public static ProductVariantResponse toResponse(ProductVariant pv, Product product) {
+        if (pv == null) return null;
+        ProductVariantResponse r = new ProductVariantResponse();
+        r.setId(pv.getId());
+        if (pv.getProduct() != null) r.setProduct(ProductMapper.toShortResponse(product));
+        r.setSize(pv.getSize());
+        r.setStock(pv.getStock());
+        r.setPriceModifier(pv.getPriceModifier());
+        return r;
+    }
+
     public static ProductVariantResponse toResponse(ProductVariant pv) {
         if (pv == null) return null;
         ProductVariantResponse r = new ProductVariantResponse();
         r.setId(pv.getId());
-        if (pv.getProduct() != null) r.setProduct(ProductMapper.toResponse(pv.getProduct()));
         r.setSize(pv.getSize());
         r.setStock(pv.getStock());
         r.setPriceModifier(pv.getPriceModifier());
@@ -39,13 +49,6 @@ public class ProductVariantMapper {
         if (list == null) return null;
         List<ProductVariant> out = new ArrayList<>();
         for (ProductVariantRequest r : list) out.add(toEntity(r));
-        return out;
-    }
-
-    public static List<ProductVariantResponse> toResponseList(List<ProductVariant> list) {
-        if (list == null) return null;
-        List<ProductVariantResponse> out = new ArrayList<>();
-        for (ProductVariant pv : list) out.add(toResponse(pv));
         return out;
     }
 

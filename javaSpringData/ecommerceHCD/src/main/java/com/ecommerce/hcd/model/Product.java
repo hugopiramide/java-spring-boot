@@ -29,10 +29,10 @@ public class Product {
     @OneToMany(mappedBy = "product", cascade = CascadeType.ALL)
     private List<ProductVariant> variants;
 
-    @Column(name = "name", length = 150)
+    @Column(name = "name", columnDefinition = "VARCHAR(100) CHARACTER SET utf8mb4")
     private String name;
 
-    @Column(name = "description")
+    @Column(name = "description", columnDefinition = "TEXT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci")
     private String description;
 
     @Column(name = "base_price", length = 10)

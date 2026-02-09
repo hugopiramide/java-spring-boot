@@ -5,6 +5,7 @@ import java.util.List;
 
 import com.ecommerce.hcd.dto.request.ProductRequest;
 import com.ecommerce.hcd.dto.response.ProductResponse;
+import com.ecommerce.hcd.dto.response.ProductShortResponse;
 import com.ecommerce.hcd.model.Category;
 import com.ecommerce.hcd.model.Product;
 import com.ecommerce.hcd.model.ProductVariant;
@@ -29,7 +30,7 @@ public class ProductMapper {
         }
         return p;
     }
-
+  
     public static ProductResponse toResponse(Product p) {
         if (p == null) return null;
         ProductResponse r = new ProductResponse();
@@ -40,7 +41,21 @@ public class ProductMapper {
         r.setBasePrice(p.getBasePrice());
         r.setImageUrl(p.getImageUrl());
         r.setActive(p.isActive());
-        if (p.getVariants() != null) r.setVariants(ProductVariantMapper.toResponseList(p.getVariants()));
+        List<ProductVariant> variants = p.getVariants();
+        if (variants != null && !variants.isEmpty()) r.setVariants(variants.stream().map(v -> ProductVariantMapper.toResponse(v)).toList());
+        return r;
+    }
+
+    public static ProductShortResponse toShortResponse(Product p) {
+        if (p == null) return null;
+        ProductShortResponse r = new ProductShortResponse();
+        r.setName(p.getName());
+        r.setPrice(p.getBasePrice());
+        r.setImageUrl(p.getImageUrl());
+        r.setDescription(p.getDescription());
+        if (p.getCategory() != null) {
+            r.setCategory(CategoryMapper.toResponse(p.getCategory()));
+        }
         return r;
     }
 

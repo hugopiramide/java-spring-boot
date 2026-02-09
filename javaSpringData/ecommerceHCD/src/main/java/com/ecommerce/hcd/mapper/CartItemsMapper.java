@@ -27,7 +27,7 @@ public class CartItemsMapper {
         CartItemsResponse r = new CartItemsResponse();
         r.setId(ci.getId());
         r.setQuantity(ci.getQuantity());
-        if (ci.getProductVariant() != null) r.setProductVariantId(ProductVariantMapper.toResponse(ci.getProductVariant()));
+        if (ci.getProductVariant() != null) r.setProductVariantId(ProductVariantMapper.toResponse(ci.getProductVariant(), ci.getProductVariant().getProduct()));
         return r;
     }
 

@@ -5,6 +5,7 @@ import java.util.Optional;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -18,6 +19,7 @@ import com.ecommerce.hcd.dto.request.ProductRequest;
 import com.ecommerce.hcd.dto.response.ProductResponse;
 import com.ecommerce.hcd.service.interfaces.ProductService;
 
+@CrossOrigin(origins = "http://localhost:5173")
 @RestController
 @RequestMapping("/api/products")
 public class ProductController {
@@ -37,6 +39,11 @@ public class ProductController {
     public ResponseEntity<ProductResponse> findById(@PathVariable Long id) {
         Optional<ProductResponse> opt = productService.findByIdDto(id);
         return opt.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
+    }
+
+    @GetMapping("/find-first-10")
+    public ResponseEntity<List<ProductResponse>> findFirst10() {
+        return ResponseEntity.ok(productService.findFirst10());
     }
 
     @PostMapping

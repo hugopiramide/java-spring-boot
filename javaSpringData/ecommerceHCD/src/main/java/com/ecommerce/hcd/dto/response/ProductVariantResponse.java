@@ -3,7 +3,7 @@ package com.ecommerce.hcd.dto.response;
 public class ProductVariantResponse {
 
     private Long id;
-    private ProductResponse product;
+    private ProductShortResponse product;
     private String size;
     private Long stock;
     private double priceModifier;
@@ -18,11 +18,11 @@ public class ProductVariantResponse {
         this.id = id;
     }
 
-    public ProductResponse getProduct() {
+    public ProductShortResponse getProduct() {
         return product;
     }
 
-    public void setProduct(ProductResponse product) {
+    public void setProduct(ProductShortResponse product) {
         this.product = product;
     }
 

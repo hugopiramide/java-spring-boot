@@ -26,4 +26,8 @@ public interface UserService {
     UserResponse saveDto(UserRequest req);
 
     UserResponse updateDto(Long id, UserRequest req);
+
+    UserResponse findByUsernameAndPassword(String username, String password);
+
+    UserResponse findByUsername(String username);
 }

@@ -1,12 +1,16 @@
 package com.ecommerce.hcd.dto.request;
 
+import java.time.LocalDate;
+
 public class UserRequest {
 
     private String username;
     private String email;
     private String password;
     private String profileImgUrl;
-    private String role;
+    private String name;
+    private String surnames;
+    private LocalDate birthday;
 
     public UserRequest() {}
 
@@ -42,12 +46,28 @@ public class UserRequest {
         this.profileImgUrl = profileImgUrl;
     }
 
-    public String getRole() {
-        return role;
+    public String getName() {
+        return name;
     }
 
-    public void setRole(String role) {
-        this.role = role;
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getSurnames() {
+        return surnames;
+    }
+
+    public void setSurnames(String surnames) {
+        this.surnames = surnames;
+    }
+
+    public LocalDate getBirthday() {
+        return birthday;
+    }
+
+    public void setBirthday(LocalDate birthday) {
+        this.birthday = birthday;
     }
 
 }

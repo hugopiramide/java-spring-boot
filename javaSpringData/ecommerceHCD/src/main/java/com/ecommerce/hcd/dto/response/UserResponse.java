@@ -1,5 +1,6 @@
 package com.ecommerce.hcd.dto.response;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 public class UserResponse {
@@ -10,6 +11,9 @@ public class UserResponse {
     private String profileImgUrl;
     private String role;
     private LocalDateTime createAt;
+    private String name;
+    private String surnames;
+    private LocalDate birthday;
 
     public UserResponse() {}
 
@@ -43,6 +47,30 @@ public class UserResponse {
 
     public void setProfileImgUrl(String profileImgUrl) {
         this.profileImgUrl = profileImgUrl;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getSurnames() {
+        return surnames;
+    }
+
+    public void setSurnames(String surnames) {
+        this.surnames = surnames;
+    }
+
+    public LocalDate getBirthday() {
+        return birthday;
+    }
+
+    public void setBirthday(LocalDate birthday) {
+        this.birthday = birthday;
     }
 
     public String getRole() {
