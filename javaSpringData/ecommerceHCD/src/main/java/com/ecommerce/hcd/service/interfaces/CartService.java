@@ -16,7 +16,7 @@ public interface CartService {
     Cart save(Cart cart);
 
     Cart update(Long id, Cart cart);
-    
+
     void deleteById(Long id);
 
     List<CartResponse> findAllDto();
@@ -30,4 +30,6 @@ public interface CartService {
     CartResponse addItemByUser(Long userId, com.ecommerce.hcd.dto.request.CartItemsRequest req);
 
     CartResponse removeItemByUser(Long userId, Long cartItemId);
+
+    Integer countItemsByUserId(Long userId);
 }

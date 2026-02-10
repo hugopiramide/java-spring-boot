@@ -28,7 +28,8 @@ public class CartServiceImpl implements CartService {
     private final ProductVariantRepository productVariantRepository;
     private final UserRepository userRepository;
 
-    public CartServiceImpl(CartRepository cartRepository, CartItemsRepository cartItemsRepository, ProductVariantRepository productVariantRepository, UserRepository userRepository) {
+    public CartServiceImpl(CartRepository cartRepository, CartItemsRepository cartItemsRepository,
+            ProductVariantRepository productVariantRepository, UserRepository userRepository) {
         this.cartRepository = cartRepository;
         this.cartItemsRepository = cartItemsRepository;
         this.productVariantRepository = productVariantRepository;
@@ -65,7 +66,8 @@ public class CartServiceImpl implements CartService {
     public List<CartResponse> findAllDto() {
         List<Cart> list = cartRepository.findAll();
         List<CartResponse> out = new ArrayList<>();
-        for (Cart c : list) out.add(CartMapper.toResponse(c));
+        for (Cart c : list)
+            out.add(CartMapper.toResponse(c));
         return out;
     }
 
@@ -130,7 +132,8 @@ public class CartServiceImpl implements CartService {
     public CartResponse removeItemByUser(Long userId, Long cartItemId) {
         User user = userRepository.findById(userId).orElseThrow(() -> new IllegalArgumentException("User not found"));
 
-        Cart cart = cartRepository.findByUserId(userId).orElseThrow(() -> new IllegalArgumentException("Cart not found for user"));
+        Cart cart = cartRepository.findByUserId(userId)
+                .orElseThrow(() -> new IllegalArgumentException("Cart not found for user"));
 
         CartItems itemToRemove = cartItemsRepository.findById(cartItemId)
                 .orElseThrow(() -> new IllegalArgumentException("CartItem not found"));
@@ -148,6 +151,11 @@ public class CartServiceImpl implements CartService {
         cart.setUpdate_at(java.time.LocalDateTime.now());
         Cart updatedCart = cartRepository.save(cart);
         return CartMapper.toResponse(updatedCart);
+    }
+
+    @Override
+    public Integer countItemsByUserId(Long userId) {
+        return cartItemsRepository.countItemsByUserId(userId);
     }
 
 }
