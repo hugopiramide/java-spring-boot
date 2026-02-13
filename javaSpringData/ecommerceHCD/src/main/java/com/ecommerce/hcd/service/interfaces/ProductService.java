@@ -6,6 +6,8 @@ import java.util.Optional;
 import com.ecommerce.hcd.model.Product;
 import com.ecommerce.hcd.dto.request.ProductRequest;
 import com.ecommerce.hcd.dto.response.ProductResponse;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 
 public interface ProductService {
 
@@ -16,7 +18,7 @@ public interface ProductService {
     Product save(Product product);
 
     Product update(Long id, Product product);
-    
+
     void deleteById(Long id);
 
     List<ProductResponse> findAllDto();
@@ -28,4 +30,8 @@ public interface ProductService {
     ProductResponse updateDto(Long id, ProductRequest req);
 
     List<ProductResponse> findFirst10();
+
+    Page<ProductResponse> findAll(Pageable pageable);
+
+    List<ProductResponse> searchByName(String name);
 }

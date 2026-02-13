@@ -3,6 +3,9 @@ package com.ecommerce.hcd.controller;
 import java.util.List;
 import java.util.Optional;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -19,7 +22,7 @@ import com.ecommerce.hcd.dto.request.ProductRequest;
 import com.ecommerce.hcd.dto.response.ProductResponse;
 import com.ecommerce.hcd.service.interfaces.ProductService;
 
-@CrossOrigin(origins = "http://localhost:5173")
+@CrossOrigin(origins = "http://localhost:5174")
 @RestController
 @RequestMapping("/api/products")
 public class ProductController {
@@ -31,8 +34,8 @@ public class ProductController {
     }
 
     @GetMapping
-    public ResponseEntity<List<ProductResponse>> findAll() {
-        return ResponseEntity.ok(productService.findAllDto());
+    public ResponseEntity<Page<ProductResponse>> findAll(Pageable pageable) {
+        return ResponseEntity.ok(productService.findAll(pageable));
     }
 
     @GetMapping("/{id}")
@@ -44,6 +47,12 @@ public class ProductController {
     @GetMapping("/find-first-10")
     public ResponseEntity<List<ProductResponse>> findFirst10() {
         return ResponseEntity.ok(productService.findFirst10());
+    }
+
+    @GetMapping("/search")
+    public ResponseEntity<List<ProductResponse>> searchProductsByName(
+            @org.springframework.web.bind.annotation.RequestParam String name) {
+        return ResponseEntity.ok(productService.searchByName(name));
     }
 
     @PostMapping

@@ -10,6 +10,8 @@ import com.ecommerce.hcd.repository.ProductRepository;
 import com.ecommerce.hcd.service.interfaces.ProductService;
 
 import jakarta.transaction.Transactional;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 
 import com.ecommerce.hcd.dto.request.ProductRequest;
 import com.ecommerce.hcd.dto.response.ProductResponse;
@@ -20,7 +22,6 @@ import java.util.ArrayList;
 public class ProductServiceImpl implements ProductService {
 
     private final ProductRepository productRepository;
-
 
     public ProductServiceImpl(ProductRepository productRepository) {
         this.productRepository = productRepository;
@@ -57,12 +58,12 @@ public class ProductServiceImpl implements ProductService {
     public List<ProductResponse> findAllDto() {
         List<ProductResponse> out = new ArrayList<>();
         productRepository.findAll().stream()
-        .map(product -> {
-            ProductResponse pr = ProductMapper.toResponse(product);
-            out.add(pr);
-            return product;
-        }).toList();
-        
+                .map(product -> {
+                    ProductResponse pr = ProductMapper.toResponse(product);
+                    out.add(pr);
+                    return product;
+                }).toList();
+
         return out;
     }
 
@@ -90,12 +91,29 @@ public class ProductServiceImpl implements ProductService {
     public List<ProductResponse> findFirst10() {
         List<ProductResponse> out = new ArrayList<>();
         productRepository.findFirst10By().stream()
-        .map(product -> {
-            ProductResponse pr = ProductMapper.toResponse(product);
-            out.add(pr);
-            return product;
-        }).toList();  
+                .map(product -> {
+                    ProductResponse pr = ProductMapper.toResponse(product);
+                    out.add(pr);
+                    return product;
+                }).toList();
 
+        return out;
+    }
+
+    @Override
+    public Page<ProductResponse> findAll(Pageable pageable) {
+        return productRepository.findAll(pageable).map(ProductMapper::toResponse);
+    }
+
+    @Override
+    public List<ProductResponse> searchByName(String name) {
+        List<ProductResponse> out = new ArrayList<>();
+        productRepository.findByNameContainingIgnoreCase(name).stream()
+                .map(product -> {
+                    ProductResponse pr = ProductMapper.toResponse(product);
+                    out.add(pr);
+                    return product;
+                }).toList();
         return out;
     }
 
