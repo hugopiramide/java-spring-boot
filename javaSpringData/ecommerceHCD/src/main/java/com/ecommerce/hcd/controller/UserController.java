@@ -20,7 +20,7 @@ import com.ecommerce.hcd.dto.request.UserRequest;
 import com.ecommerce.hcd.dto.response.UserResponse;
 import com.ecommerce.hcd.service.interfaces.UserService;
 
-@CrossOrigin(origins = "http://localhost:5174")
+@CrossOrigin(origins = "http://localhost:5173")
 @RestController
 @RequestMapping("/api/users")
 public class UserController {

@@ -19,7 +19,7 @@ import com.ecommerce.hcd.dto.request.ProductVariantRequest;
 import com.ecommerce.hcd.dto.response.ProductVariantResponse;
 import com.ecommerce.hcd.service.interfaces.ProductVariantService;
 
-@CrossOrigin(origins = "http://localhost:5174")
+@CrossOrigin(origins = "http://localhost:5173")
 @RestController
 @RequestMapping("/api/product-variants")
 public class ProductVariantController {

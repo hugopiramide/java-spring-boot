@@ -22,7 +22,7 @@ import com.ecommerce.hcd.dto.request.ProductRequest;
 import com.ecommerce.hcd.dto.response.ProductResponse;
 import com.ecommerce.hcd.service.interfaces.ProductService;
 
-@CrossOrigin(origins = "http://localhost:5174")
+@CrossOrigin(origins = "http://localhost:5173")
 @RestController
 @RequestMapping("/api/products")
 public class ProductController {

@@ -95,84 +95,102 @@ INSERT INTO product (id, name, description, base_price, active, image_url, categ
 -- 3. VARIANTES DE PRODUCTO (40 registros)
 -- =============================================================================
 INSERT INTO product_variant (id, product_id, size, stock, price_modifier) VALUES 
-(1, 1, '42', 45, 0.0), (2, 2, '41', 120, 0.0), (3, 3, '43', 15, 10.0), (4, 4, '40', 25, 0.0),
-(5, 5, '44', 10, 25.0), (6, 6, '42', 300, 0.0), (7, 7, '45', 20, 0.0), (8, 8, '42', 8, 40.0),
-(9, 9, 'M', 60, 0.0), (10, 10, '43', 14, 0.0), (11, 11, '44', 5, 60.0), (12, 12, '41', 30, 0.0),
-(13, 13, 'S', 80, 0.0), (14, 14, '42', 20, 0.0), (15, 15, 'L', 40, 0.0), (16, 16, '40', 22, 0.0),
-(17, 17, 'M', 55, 0.0), (18, 18, 'L', 500, 0.0), (19, 19, '32', 50, 0.0), (20, 20, '42', 12, 0.0),
-(21, 21, '43', 35, 0.0), (22, 22, '44', 30, 0.0), (23, 23, '42', 18, 5.0), (24, 24, '42', 6, 50.0),
-(25, 25, '45', 10, 70.0), (26, 26, '40', 25, 0.0), (27, 27, '42', 45, 0.0), (28, 28, '43', 20, 0.0),
-(29, 29, 'XS', 70, 0.0), (30, 30, '41', 40, 0.0), (31, 31, '44', 25, 0.0), (32, 32, '42', 15, 20.0),
-(33, 33, '43', 12, 0.0), (34, 34, '40', 18, 0.0), (35, 35, '42', 150, 0.0), (36, 36, '41', 28, 0.0),
-(37, 37, '44', 22, 0.0), (38, 38, '42', 35, 0.0), (39, 39, '45', 4, 90.0), (40, 40, 'XL', 20, 0.0);
+-- Producto 1: Nike Air Max 270
+(1, 1, '41', 20, 0.0), (2, 1, '42', 45, 0.0), (3, 1, '43', 30, 0.0), (4, 1, '44', 15, 0.0),
+-- Producto 2: Nike Pegasus 40
+(5, 2, '40', 25, 0.0), (6, 2, '41', 120, 0.0), (7, 2, '42', 80, 0.0), (8, 2, '43', 40, 0.0),
+-- Producto 3: Nike Dunk Low
+(9, 3, '42', 20, 10.0), (10, 3, '43', 15, 10.0), (11, 3, '44', 10, 10.0),
+-- Producto 4: Nike Metcon 9
+(12, 4, '40', 25, 0.0), (13, 4, '41', 30, 0.0), (14, 4, '42', 20, 0.0),
+-- Producto 5: Mercurial Superfly 9
+(15, 5, '42', 8, 25.0), (16, 5, '43', 12, 25.0), (17, 5, '44', 10, 25.0),
+-- Producto 6: Air Force 1 07
+(18, 6, '41', 150, 0.0), (19, 6, '42', 300, 0.0), (20, 6, '43', 200, 0.0),
+-- Producto 7: LeBron XXI
+(21, 7, '44', 15, 0.0), (22, 7, '45', 20, 0.0), (23, 7, '46', 10, 0.0),
+-- Producto 8: Vaporfly NEXT% 3
+(24, 8, '41', 5, 40.0), (25, 8, '42', 8, 40.0), (26, 8, '43', 6, 40.0),
+-- Producto 9: Nike Tech Fleece Hoodie
+(27, 9, 'S', 40, 0.0), (28, 9, 'M', 60, 0.0), (29, 9, 'L', 50, 0.0), (30, 9, 'XL', 20, 0.0),
+-- Producto 10: ACG Mountain Fly 2
+(31, 10, '42', 12, 0.0), (32, 10, '43', 14, 0.0), (33, 10, '44', 10, 0.0),
+-- Producto 11: Air Jordan 1 High OG
+(34, 11, '43', 7, 60.0), (35, 11, '44', 5, 60.0), (36, 11, '45', 4, 60.0),
+-- Producto 12: Nike Wildhorse 8
+(37, 12, '41', 30, 0.0), (38, 12, '42', 25, 0.0), (39, 12, '43', 20, 0.0),
+-- Producto 13: Nike Pro Leggings
+(40, 13, 'XS', 40, 0.0), (41, 13, 'S', 80, 0.0), (42, 13, 'M', 60, 0.0),
+-- Producto 14: Zoom Court NXT
+(43, 14, '41', 15, 0.0), (44, 14, '42', 20, 0.0), (45, 14, '43', 12, 0.0),
+-- Producto 15: Golf Victory Polo
+(46, 15, 'M', 35, 0.0), (47, 15, 'L', 40, 0.0), (48, 15, 'XL', 25, 0.0),
+-- Producto 16: Nike SB Ishod
+(49, 16, '40', 22, 0.0), (50, 16, '41', 18, 0.0), (51, 16, '42', 15, 0.0),
+-- Producto 17: Nike Swim Briefs
+(52, 17, 'S', 30, 0.0), (53, 17, 'M', 55, 0.0), (54, 17, 'L', 40, 0.0),
+-- Producto 18: Nike Elite Socks
+(55, 18, 'M', 300, 0.0), (56, 18, 'L', 500, 0.0), (57, 18, 'XL', 200, 0.0),
+-- Producto 19: Nike Star Runner Kids
+(58, 19, '30', 40, 0.0), (59, 19, '32', 50, 0.0), (60, 19, '34', 35, 0.0),
+-- Producto 20: Nike React Phantom
+(61, 20, '41', 15, 0.0), (62, 20, '42', 12, 0.0), (63, 20, '43', 10, 0.0),
+-- Producto 21: Nike Invincible 3
+(64, 21, '42', 40, 0.0), (65, 21, '43', 35, 0.0), (66, 21, '44', 20, 0.0),
+-- Producto 22: Nike Blazer Mid 77
+(67, 22, '43', 25, 0.0), (68, 22, '44', 30, 0.0), (69, 22, '45', 15, 0.0),
+-- Producto 23: Air Max Plus
+(70, 23, '41', 20, 5.0), (71, 23, '42', 18, 5.0), (72, 23, '43', 15, 5.0),
+-- Producto 24: Alphafly NEXT% 2
+(73, 24, '41', 5, 50.0), (74, 24, '42', 6, 50.0), (75, 24, '43', 4, 50.0),
+-- Producto 25: Air Jordan 4 Retro
+(76, 25, '44', 12, 70.0), (77, 25, '45', 10, 70.0), (78, 25, '46', 8, 70.0),
+-- Producto 26: Nike Free Metcon 5
+(79, 26, '40', 25, 0.0), (80, 26, '41', 30, 0.0), (81, 26, '42', 20, 0.0),
+-- Producto 27: Nike Cortez
+(82, 27, '41', 35, 0.0), (83, 27, '42', 45, 0.0), (84, 27, '43', 30, 0.0),
+-- Producto 28: Nike Zegama Trail
+(85, 28, '42', 25, 0.0), (86, 28, '43', 20, 0.0), (87, 28, '44', 15, 0.0),
+-- Producto 29: Nike One Leggings
+(88, 29, 'XS', 70, 0.0), (89, 29, 'S', 90, 0.0), (90, 29, 'M', 80, 0.0),
+-- Producto 30: Air Max 90
+(91, 30, '40', 30, 0.0), (92, 30, '41', 40, 0.0), (93, 30, '42', 50, 0.0),
+-- Producto 31: Kyrie Infinity
+(94, 31, '43', 20, 0.0), (95, 31, '44', 25, 0.0), (96, 31, '45', 15, 0.0),
+-- Producto 32: Nike Phantom Luna
+(97, 32, '39', 12, 20.0), (98, 32, '40', 18, 20.0), (99, 32, '41', 15, 20.0),
+-- Producto 33: Nike Romaleos 4
+(100, 33, '42', 10, 0.0), (101, 33, '43', 12, 0.0), (102, 33, '44', 8, 0.0),
+-- Producto 34: Nike SB Dunk High
+(103, 34, '40', 18, 0.0), (104, 34, '41', 22, 0.0), (105, 34, '42', 15, 0.0),
+-- Producto 35: Nike Victori One
+(106, 35, '41', 100, 0.0), (107, 35, '42', 150, 0.0), (108, 35, '43', 120, 0.0),
+-- Producto 36: Nike Structure 25
+(109, 36, '41', 28, 0.0), (110, 36, '42', 35, 0.0), (111, 36, '43', 25, 0.0),
+-- Producto 37: Nike Vomero 17
+(112, 37, '43', 18, 0.0), (113, 37, '44', 22, 0.0), (114, 37, '45', 12, 0.0),
+-- Producto 38: Nike Air Max Dawn
+(115, 38, '41', 25, 0.0), (116, 38, '42', 35, 0.0), (117, 38, '43', 20, 0.0),
+-- Producto 39: Air Jordan 11 Retro
+(118, 39, '44', 6, 90.0), (119, 39, '45', 4, 90.0), (120, 39, '46', 3, 90.0),
+-- Producto 40: Nike Storm-FIT Jacket
+(121, 40, 'M', 25, 0.0), (122, 40, 'L', 30, 0.0), (123, 40, 'XL', 20, 0.0);
 
 -- =============================================================================
 -- 4. USUARIOS (40 registros)
 -- =============================================================================
 INSERT INTO user (id, user_name, email, password, role, create_at, profile_img_url, name, surnames, birthday) VALUES 
 (1, 'admin_hcd', 'admin@nike.com', 'admin_hash', 'ROLE_ADMIN', NOW(), 'img1.jpg', 'Admin', 'Hcd', '1980-01-01'),
-(2, 'runner_pro', 'marcos@runner.com', 'pass1', 'ROLE_USER', NOW(), 'img2.jpg', 'Marcos', 'Gonzalez', '1990-05-10'),
-(3, 'skater_88', 'tony@sb.com', 'pass2', 'ROLE_USER', NOW(), 'img3.jpg', 'Tony', 'Hawk', '1982-06-12'),
-(4, 'gym_girl', 'ana@fit.com', 'pass3', 'ROLE_USER', NOW(), 'img4.jpg', 'Ana', 'Lopez', '1995-03-22'),
-(5, 'sneaker_head', 'kevin@hype.com', 'pass4', 'ROLE_USER', NOW(), 'img5.jpg', 'Kevin', 'Smith', '1991-11-05'),
-(6, 'jordan_fan', 'mike23@aj.com', 'pass5', 'ROLE_USER', NOW(), 'img6.jpg', 'Mike', 'Jordan', '1963-02-17'),
-(7, 'tenis_elite', 'rafa@court.com', 'pass6', 'ROLE_USER', NOW(), 'img7.jpg', 'Rafael', 'Nadal', '1986-06-03'),
-(8, 'yoga_zen', 'elena@yoga.com', 'pass7', 'ROLE_USER', NOW(), 'img8.jpg', 'Elena', 'Martinez', '1992-07-15'),
-(9, 'soccer_star', 'cris7@football.com', 'pass8', 'ROLE_USER', NOW(), 'img9.jpg', 'Cristiano', 'Ronaldo', '1985-02-05'),
-(10, 'marathon_man', 'eliud@fast.com', 'pass9', 'ROLE_USER', NOW(), 'img10.jpg', 'Eliud', 'Kipchoge', '1984-11-05'),
-(11, 'user11', 'user11@nike.com', 'pass11', 'ROLE_USER', NOW(), 'img11.jpg', 'User', 'Eleven', '1993-01-11'),
-(12, 'user12', 'user12@nike.com', 'pass12', 'ROLE_USER', NOW(), 'img12.jpg', 'User', 'Twelve', '1993-02-12'),
-(13, 'user13', 'user13@nike.com', 'pass13', 'ROLE_USER', NOW(), 'img13.jpg', 'User', 'Thirteen', '1993-03-13'),
-(14, 'user14', 'user14@nike.com', 'pass14', 'ROLE_USER', NOW(), 'img14.jpg', 'User', 'Fourteen', '1993-04-14'),
-(15, 'user15', 'user15@nike.com', 'pass15', 'ROLE_USER', NOW(), 'img15.jpg', 'User', 'Fifteen', '1993-05-15'),
-(16, 'user16', 'user16@nike.com', 'pass16', 'ROLE_USER', NOW(), 'img16.jpg', 'User', 'Sixteen', '1993-06-16'),
-(17, 'user17', 'user17@nike.com', 'pass17', 'ROLE_USER', NOW(), 'img17.jpg', 'User', 'Seventeen', '1993-07-17'),
-(18, 'user18', 'user18@nike.com', 'pass18', 'ROLE_USER', NOW(), 'img18.jpg', 'User', 'Eighteen', '1993-08-18'),
-(19, 'user19', 'user19@nike.com', 'pass19', 'ROLE_USER', NOW(), 'img19.jpg', 'User', 'Nineteen', '1993-09-19'),
-(20, 'user20', 'user20@nike.com', 'pass20', 'ROLE_USER', NOW(), 'img20.jpg', 'User', 'Twenty', '1993-10-20'),
-(21, 'user21', 'user21@nike.com', 'pass21', 'ROLE_USER', NOW(), 'img21.jpg', 'User', '21', '1993-11-21'),
-(22, 'user22', 'user22@nike.com', 'pass22', 'ROLE_USER', NOW(), 'img22.jpg', 'User', '22', '1993-12-22'),
-(23, 'user23', 'user23@nike.com', 'pass23', 'ROLE_USER', NOW(), 'img23.jpg', 'User', '23', '1994-01-23'),
-(24, 'user24', 'user24@nike.com', 'pass24', 'ROLE_USER', NOW(), 'img24.jpg', 'User', '24', '1994-02-24'),
-(25, 'user25', 'user25@nike.com', 'pass25', 'ROLE_USER', NOW(), 'img25.jpg', 'User', '25', '1994-03-25'),
-(26, 'user26', 'user26@nike.com', 'pass26', 'ROLE_USER', NOW(), 'img26.jpg', 'User', '26', '1994-04-26'),
-(27, 'user27', 'user27@nike.com', 'pass27', 'ROLE_USER', NOW(), 'img27.jpg', 'User', '27', '1994-05-27'),
-(28, 'user28', 'user28@nike.com', 'pass28', 'ROLE_USER', NOW(), 'img28.jpg', 'User', '28', '1994-06-28'),
-(29, 'user29', 'user29@nike.com', 'pass29', 'ROLE_USER', NOW(), 'img29.jpg', 'User', '29', '1994-07-29'),
-(30, 'user30', 'user30@nike.com', 'pass30', 'ROLE_USER', NOW(), 'img30.jpg', 'User', '30', '1994-08-30'),
-(31, 'user31', 'user31@nike.com', 'pass31', 'ROLE_USER', NOW(), 'img31.jpg', 'User', '31', '1994-09-30'),
-(32, 'user32', 'user32@nike.com', 'pass32', 'ROLE_USER', NOW(), 'img32.jpg', 'User', '32', '1994-10-31'),
-(33, 'user33', 'user33@nike.com', 'pass33', 'ROLE_USER', NOW(), 'img33.jpg', 'User', '33', '1994-11-30'),
-(34, 'user34', 'user34@nike.com', 'pass34', 'ROLE_USER', NOW(), 'img34.jpg', 'User', '34', '1994-12-31'),
-(35, 'user35', 'user35@nike.com', 'pass35', 'ROLE_USER', NOW(), 'img35.jpg', 'User', '35', '1995-01-01'),
-(36, 'user36', 'user36@nike.com', 'pass36', 'ROLE_USER', NOW(), 'img36.jpg', 'User', '36', '1995-02-02'),
-(37, 'user37', 'user37@nike.com', 'pass37', 'ROLE_USER', NOW(), 'img37.jpg', 'User', '37', '1995-03-03'),
-(38, 'user38', 'user38@nike.com', 'pass38', 'ROLE_USER', NOW(), 'img38.jpg', 'User', '38', '1995-04-04'),
-(39, 'user39', 'user39@nike.com', 'pass39', 'ROLE_USER', NOW(), 'img39.jpg', 'User', '39', '1995-05-05'),
-(40, 'user40', 'user40@nike.com', 'pass40', 'ROLE_USER', NOW(), 'img40.jpg', 'User', '40', '1995-06-06');
+(2, 'runner_pro', 'marcos@runner.com', 'pass1', 'ROLE_USER', NOW(), 'img2.jpg', 'Marcos', 'Gonzalez', '1990-05-10');
 
 -- =============================================================================
--- 5. CARRITOS (40 registros - Uno por cada usuario)
+-- 5. CARRITOS (2 registros)
 -- =============================================================================
 INSERT INTO cart (id, user_id, update_at) VALUES 
-(1, 1, NOW()), (2, 2, NOW()), (3, 3, NOW()), (4, 4, NOW()), (5, 5, NOW()),
-(6, 6, NOW()), (7, 7, NOW()), (8, 8, NOW()), (9, 9, NOW()), (10, 10, NOW()),
-(11, 11, NOW()), (12, 12, NOW()), (13, 13, NOW()), (14, 14, NOW()), (15, 15, NOW()),
-(16, 16, NOW()), (17, 17, NOW()), (18, 18, NOW()), (19, 19, NOW()), (20, 20, NOW()),
-(21, 21, NOW()), (22, 22, NOW()), (23, 23, NOW()), (24, 24, NOW()), (25, 25, NOW()),
-(26, 26, NOW()), (27, 27, NOW()), (28, 28, NOW()), (29, 29, NOW()), (30, 30, NOW()),
-(31, 31, NOW()), (32, 32, NOW()), (33, 33, NOW()), (34, 34, NOW()), (35, 35, NOW()),
-(36, 36, NOW()), (37, 37, NOW()), (38, 38, NOW()), (39, 39, NOW()), (40, 40, NOW());
+(1, 1, NOW()), (2, 2, NOW());
 
 -- =============================================================================
--- 6. ÍTEMS DEL CARRITO (40 registros)
+-- 6. ÍTEMS DEL CARRITO (2 registros)
 -- =============================================================================
 INSERT INTO cart_item (id, cart_id, product_variant_id, quantity) VALUES 
-(1, 1, 1, 1), (2, 2, 2, 1), (3, 3, 3, 1), (4, 4, 4, 1), (5, 5, 5, 1),
-(6, 6, 6, 1), (7, 7, 7, 1), (8, 8, 8, 1), (9, 9, 9, 1), (10, 10, 10, 1),
-(11, 11, 11, 1), (12, 12, 12, 1), (13, 13, 13, 1), (14, 14, 14, 1), (15, 15, 15, 1),
-(16, 16, 16, 1), (17, 17, 17, 1), (18, 18, 18, 5), (19, 19, 19, 1), (20, 20, 20, 1),
-(21, 21, 21, 1), (22, 22, 22, 1), (23, 23, 23, 1), (24, 24, 24, 1), (25, 25, 25, 1),
-(26, 26, 26, 1), (27, 27, 27, 1), (28, 28, 28, 1), (29, 29, 29, 1), (30, 30, 30, 1),
-(31, 31, 31, 1), (32, 32, 32, 1), (33, 33, 33, 1), (34, 34, 34, 1), (35, 35, 35, 1),
-(36, 36, 36, 1), (37, 37, 37, 1), (38, 38, 38, 1), (39, 39, 39, 1), (40, 40, 40, 1);
+(1, 1, 2, 1), (2, 2, 6, 1);

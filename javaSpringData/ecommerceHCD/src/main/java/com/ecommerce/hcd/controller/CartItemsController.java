@@ -19,7 +19,7 @@ import com.ecommerce.hcd.dto.request.CartItemsRequest;
 import com.ecommerce.hcd.dto.response.CartItemsResponse;
 import com.ecommerce.hcd.service.interfaces.CartItemsService;
 
-@CrossOrigin(origins = "http://localhost:5174")
+@CrossOrigin(origins = "http://localhost:5173")
 @RestController
 @RequestMapping("/api/cart-items")
 public class CartItemsController {
